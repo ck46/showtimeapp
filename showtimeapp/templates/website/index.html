@@ -1,0 +1,118 @@
+{% extends 'basehome.html' %}
+
+{% load static %}
+
+{% load staticfiles %}
+
+{% block content  %}
+
+<div class="bg-image" >
+  <img src="#">
+</div>
+
+<div class="bg-text">
+      <a href="https://fontmeme.com/netflix-font/"><img src="https://fontmeme.com/permalink/190124/1fe7ca15465dda1e07f6ea9b5c4faba9.png" alt="netflix-font" border="0"></a>
+      <p>YOUR HOME FOR MOVIES & TV SHOWS. ANYTIME.ANYWHERE</p>
+
+      <div style="padding-left:50px;">
+      <div class="row">
+         
+                  
+              
+              <div  class="col-sm-6" style=" border-right: 3px solid white;">
+                  
+                      <div >
+                  <div style="padding-left:250px; width:100%; border-right: #0000;">
+                          <p class="text-center ">First Time ?</p>
+                       
+                          
+                          <div style="padding-left:20%;">
+                              <div style="background-color:#d20d04; ">
+                                  <p class="text-center">
+                                      START YOUR FREE 
+                                  </p>
+  
+                                  <p class="text-center">
+                                     3 DAY TRAIL
+                                  </p>
+                  </div>
+                          </div>
+                       
+                                                  
+                                    
+                                      
+                  
+                 
+                  <p class="text-center">
+                      PLANS FROM 
+                      <br>K100 / MONTH
+                  </p>
+              </div>
+              </div>
+
+
+
+              </div>
+              <div class="col-sm-3">
+                  <p>Welcome Back</p>
+                  <form>
+                          <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              
+                            </div>
+                            <input type="text" class="form-control" placeholder="Email">
+                          </div>
+                        
+                          <div class="input-group mb-3">
+                            <input type="password" class="form-control" placeholder="Password">
+                            
+                          </div>
+                          <a href="{% url 'login'%}">
+                              <button type="button" class="btn" style="color:#fff; background-color:#d20d04;">Login</button>
+                          </a>
+                          <a href="{% url 'signup'%}">
+                              <button type="button" class="btn" style="color:#fff; background-color:#d20d04;">Sign Up</button>
+                          </a>
+                          
+                        </form> 
+              </div>
+          
+          </div>
+      </div>
+
+      <div style="padding-top: 30px;" ></div>
+
+
+      <div style="padding-left:25%;">
+          <div class="row">
+         
+                  <div class="col-md-3">
+                          <div class="text-center">
+                      <i class="fa fa-mobile-phone" style="font-size:24px"></i>
+                      <i class="fa fa-tablet" style="font-size:36px"></i>
+                      <i class="fa fa-laptop" style="font-size:48px;"></i>
+                      <p>Select instantly on your mobile device</p>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                          <div class="text-center">
+                      <i class="fa fa-tv" style="font-size:36px"></i>
+                      <p>T.v shows and movies streamed instantly to your decoder without internet connection
+                      </p>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                          <div class="text-center">
+                                  <i class=" fa fa-times-circle" style="font-size:36px"></i>
+                                  <p>
+                                          Cancel anytime
+                                  </p>
+                          </div>
+                          
+                     
+                  </div>
+              </div>
+          </div>
+</div>
+
+{% endblock %}
