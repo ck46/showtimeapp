@@ -14,7 +14,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#1c0238;">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -26,7 +26,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{% url 'dashboardPage' %}">
               <i class="fas fa-fw fa-tachometer-alt"></i>
               <span>Dashboard</span></a>
           </li>
@@ -36,21 +36,20 @@
     
           <!-- Heading -->
           <div class="sidebar-heading">
-            Store List Section
+            Movie | Series
           </div>
     
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
               <i class="fas fa-fw fa-cog"></i>
-              <span>Store List</span>
+              <span>Movie List</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header"></h6>
-                <a class="collapse-item" href="">Product List</a>
-                <a class="collapse-item" href="#">Display Products</a>
-                <a class="collapse-item" href="">Promotional List</a>
+                <a class="collapse-item" href="{% url 'moviesList' %}">Movie List</a>
+  
               </div>
             </div>
           </li>
@@ -62,20 +61,20 @@
     
           <!-- Heading -->
           <div class="sidebar-heading">
-                Store Section
+                Series Section
           </div>
     
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
               <i class="fas fa-fw fa-folder"></i>
-              <span>Store</span>
+              <span>Series</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Store Screens:</h6>
-                <a class="collapse-item" href="#">Stores</a>
-                <a class="collapse-item" href="">Store Product</a>
+               
+                <a class="collapse-item" href="#">Series</a>
+              
               </div>
             </div>
           </li>
@@ -315,14 +314,11 @@
         <div class="container">
                 <div class="col-md-4">
                         {% if newSeries.title %}
-                        <div class="card" style="width:100%; height:100%;">
+                        <div  style="width:300px; height:150px;">
                                 <img class="card-img-top" src="{{ newSeries.seriesImages.url }}" alt="Card image">
-                                <div class="card-body">
-                                  <h4 class="card-title">{{ newSeries.title}}</h4>
-                                  <p class="card-text">{{newSeries.description}}</p>
-                                  <p class="card-text">{{newSeries.publishedDate}}</p>
-                                  <a href="#" class="btn btn-primary" class="PayButton"></a>
-                                </div>
+                                <h4 class="card-title" style="color:#fff;">{{ newSeries.title}}</h4>
+                                <p class="card-text" style="color: grey;">{{newSeries.description}}</p>
+                                <p class="card-text" style="color: grey;">{{newSeries.publishedDate}}</p>
                               </div>
                 
                         {% endif %}

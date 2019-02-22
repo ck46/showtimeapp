@@ -11,7 +11,7 @@ import time
 
 
 # Dashboard Product
-def dashboardPage(request):
+def dashboardMoviePage(request):
     movies= Movie.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
     return render(request, 'website/dashboardPage.html', {'newMovies' : movies, 'newGenres' : genres})
