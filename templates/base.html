@@ -32,18 +32,38 @@
     {% include 'includes/header.html' %} 
     {% block content %} 
     
+    <div id="paypal-button-container"></div>
 
+    <script>
+      paypal.Buttons().render('#paypal-button-container');
+    </script>
       {% endblock %}
 
 
-       
-
+     
 
     {% block javascript %}
-
+    <script
+    src="https://www.paypal.com/sdk/js?client-id=SB_CLIENT_ID">
+  </script>
     
     <script src="https://www.paypal.com/sdk/js?client-id=AXu7kGz1fVgS6wgWeCpxh9xSJxyZBYsZQ_UXsuEQMuH7GYBTlxVV3TTFealP8RswhPlWU0a_GB2qxmPm"></script>
-    <script>paypal.Buttons('.PayButton').render('body');</script>
+    <script>paypal.Buttons('Button').render('body');</script>
+    <script>
+        paypal.Buttons({
+          createOrder: function(data, actions) {
+            // Set up the transaction
+            return actions.order.create({
+              purchase_units: [{
+                amount: {
+                  value: '0.01'
+                }
+              }]
+            });
+          }
+        }).render('#paypal-button-container');
+      </script>
+      
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
