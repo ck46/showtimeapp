@@ -1,14 +1,37 @@
-{% extends 'base.html' %}
+{% extends 'basehome.html' %}
 
-<!-- aa -->
-{% block content %}
+{% load static %}
+
+{% load staticfiles %}
+
+{% block content  %}
+
+<div class="bg-image" >
+    <img src="{% static 'img/banner.jpg' %}" width="100%";>
+  </div>
+
+
+
+
 <div class="container">
+    
   
   <div class="row justify-content-center">
+    
     <div class="col-lg-4 col-md-6 col-sm-8">
+      
+        <div style="margin-top:-450px;">
+            <div style="margin-right:-70px;">
+                <a href="{% url 'Home' %}"><img src="https://fontmeme.com/permalink/190124/1fe7ca15465dda1e07f6ea9b5c4faba9.png" alt="netflix-font" border="0"></a>
+                <p>YOUR HOME FOR MOVIES & TV SHOWS. ANYTIME.ANYWHERE</p>
+            
+            </div>
+        </div>
+
+      <div style="padding-left: 80px;">
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title">Show Time - Login</a></h3>
+          <h3 class="card-title">Login</a></h3>
           
           <form method="post" novalidate>
             
@@ -19,12 +42,15 @@
         <div class="card-footer text-muted text-center">
           New to Login <a href="{% url 'signup' %}">Sign up</a>
         </div>
+
+        <div class="text-center py-2">
+            <small>
+              <a href="#" class="text-muted">Forgot your password?</a>
+            </small>
+          </div>
       </div>
-      <div class="text-center py-2">
-        <small>
-          <a href="#" class="text-muted">Forgot your password?</a>
-        </small>
-      </div>
+    </div>
+      
     </div>
   </div>
 </div>

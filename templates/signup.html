@@ -1,13 +1,17 @@
-{% extends 'base.html' %} 
+{% extends 'basehome.html' %} 
 {% load static %}
 
 {% block content %}
-<div class="container">
+<div class="bg-image" >
+    <img src="{% static 'img/banner.jpg' %}" width="100%";>
+  </div>
+
+<div style="margin-top:-480px;"class="container">
   
   <div class="row justify-content-center">
     <div class="col-md-7 col-sm-12">
       <div class="card">
-          <h1 class="text-center logo my-4"><a href="#">Show Time - Signup</a></h1>
+          <h1 class="text-center logo my-4"><a href="#">Signup</a></h1>
         <div class="card-body">
           
           <form method="post" autocomplete="off" class="form" role="form">
@@ -25,5 +29,3 @@
 {% endblock %}
 
 
-
-<

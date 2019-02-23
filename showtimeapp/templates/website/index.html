@@ -7,10 +7,10 @@
 {% block content  %}
 
 <div class="bg-image" >
-  <img src="#">
+  <img src="{% static 'img/banner.jpg' %}" width="100%";>
 </div>
 
-<div class="bg-text">
+<div class="bg-text" style="margin-top:-100px;">
       <a href="https://fontmeme.com/netflix-font/"><img src="https://fontmeme.com/permalink/190124/1fe7ca15465dda1e07f6ea9b5c4faba9.png" alt="netflix-font" border="0"></a>
       <p>YOUR HOME FOR MOVIES & TV SHOWS. ANYTIME.ANYWHERE</p>
 
@@ -57,7 +57,7 @@
                   <p>Welcome Back</p>
 
                   
-                  <form>
+                  <!-- <form>
                           <div class="input-group mb-3">
                             <div class="input-group-prepend">
                               
@@ -68,15 +68,16 @@
                           <div class="input-group mb-3">
                             <input type="password" class="form-control" placeholder="Password">
                             
-                          </div>
+                          </div> -->
                           <a href="{% url 'login'%}">
                               <button type="button" class="btn" style="color:#fff; background-color:#d20d04;">Login</button>
                           </a>
                           <a href="{% url 'signup'%}">
                               <button type="button" class="btn" style="color:#fff; background-color:#d20d04;">Sign Up</button>
                           </a>
-                          
-                        </form> 
+<!--                           
+                        </form>  -->
+                        
               </div>
           
           </div>

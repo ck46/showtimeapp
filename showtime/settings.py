@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'seriesapp',
     'showtimeapp',
     'crispy_forms',
+    # 'account',
 ]
 
+# AUTH_USER_MODEL = 'account.CustomUser' 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -128,7 +130,7 @@ STATICFILES_DIRS  = [os.path.join(BASE_DIR, 'static'),]
 
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = 'dashboardPage'
+LOGIN_REDIRECT_URL = 'dashboardMoviePage'
 
 
 MEDIA_URL = '/media/'

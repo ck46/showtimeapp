@@ -37,18 +37,33 @@
     <script>
       paypal.Buttons().render('#paypal-button-container');
     </script>
+
+
+    <!-- mtn mobile money -->
+    <div class="mobile-money-qr-payment"></div>
       {% endblock %}
 
 
      
 
     {% block javascript %}
+
+    <script src="https://pg-sandbox.northeurope.cloudapp.azure.com/v0.1.0/mobile-money-widget-mtn.js">
+    </script>
+    <script src="TODO_REPLACE_WITH =_PRODUCTION_PATH"></script>
     <script
     src="https://www.paypal.com/sdk/js?client-id=SB_CLIENT_ID">
   </script>
     
     <script src="https://www.paypal.com/sdk/js?client-id=AXu7kGz1fVgS6wgWeCpxh9xSJxyZBYsZQ_UXsuEQMuH7GYBTlxVV3TTFealP8RswhPlWU0a_GB2qxmPm"></script>
-    <script>paypal.Buttons('Button').render('body');</script>
+    
+    <!-- Pay Button -->
+      <!-- <script>
+        function myFunction() {
+          document.querySelector("#demo").innerHTML = "Hello World!";
+        }
+        </script> -->
+    <script>paypal.Buttons('#paypal').render('body');</script>
     <script>
         paypal.Buttons({
           createOrder: function(data, actions) {

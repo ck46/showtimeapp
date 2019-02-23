@@ -421,30 +421,23 @@
             <div class="row">
                {% for newMoviess in newMovies %}
                         
-                            <div class="col-sm-3 auto">
-                                <div >
-                                  <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:300px; height:400px;">
-                                    <div class="card-body">
-                                      <div class="spaceCasestudy">
-                                      
-                                      <p class="card-text" style="color:#fff;"><b>
-                                              <a href="{% url 'moviesDetail' pk=newMoviess.pk %}">
-                                                  {{ newMoviess.title }}
-                                              </a>
-                                      </b></p>
-                                      
-                                      <p class="card-text" style="color: grey;">{{ newMoviess.description }}</p> 
-                                      <p class="card-text" style="color: grey;" >{{ newMoviess.publishedDate }}</p> 
-                                      </div>
-                                    </div>
-                                    <h4 class="card-title" style="color:#fff;">{{ newMovies.title}}</h4>
-                         
-          
-                                    </div>
-                                      </div>
+              <div class="col-sm-3 auto">
+                  <div  style="width:300px; height:150px;">
+                    <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:300px; height:400px;">
+                    <a href="{% url 'moviesDetail' pk=newMoviess.pk %}" style="color:#fff;">
+                        {{ newMoviess.title }} 
+                    </a>                         
+                    <p class="card-text" style="color: grey;">{{ newMoviess.description }}</p> 
+                    <p class="card-text" style="color: grey;" >{{ newMoviess.publishedDate }}</p> 
+                    <h4 class="card-title" style="color:#fff;">{{ newMovies.title}}</h4>
+                  </div>
+                </div>
                         
                         
-                          {% endfor %}
+                {% endfor %}
+
+                          
+              
                 </div>
               </div>
 
