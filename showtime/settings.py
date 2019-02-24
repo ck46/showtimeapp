@@ -41,10 +41,11 @@ INSTALLED_APPS = [
     'seriesapp',
     'showtimeapp',
     'crispy_forms',
-    # 'account',
+    'account',
 ]
 
-# AUTH_USER_MODEL = 'account.CustomUser' 
+AUTH_USER_MODEL = 'account.CustomUser' 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

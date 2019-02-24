@@ -261,108 +261,7 @@
           <hr class="sidebar-divider d-none d-md-block">
 
           <div class="col-md-2">
-            <script>
-                paypal.Buttons().render('#paypal-button-container');
-              </script>
-              <script>
-                paypal.Buttons({
-                  createOrder: function(data, actions) {
-                    return actions.order.create({
-                      purchase_units: [{
-                        amount: {
-                          value: '0.01'
-                        }
-                      }]
-                    });
-                  },
-                  onApprove: function(data, actions) {
-                    // Capture the funds from the transaction
-                    return actions.order.capture().then(function(details) {
-                      // Show a success message to your buyer
-                      alert('Transaction completed by ' + details.payer.name.given_name);
-                    });
-                  }
-                }).render('#paypal-button-container');
-              </script>
-              <script>
-                paypal.Buttons({
-                  createOrder: function(data, actions) {
-                    return actions.order.create({
-                      purchase_units: [{
-                        amount: {
-                          value: '0.01'
-                        }
-                      }]
-                    });
-                  },
-                  onApprove: function(data, actions) {
-                    return actions.order.capture().then(function(details) {
-                      alert('Transaction completed by ' + details.payer.name.given_name);
-                      // Call your server to save the transaction
-                      return fetch('/paypal-transaction-complete', {
-                        method: 'post',
-                        body: JSON.stringify({
-                          orderID: data.orderID
-                        })
-                      });
-                    });
-                  }
-                }).render('#paypal-button-container');
-              </script>
-              <script>
-              // Note: This code is intended as a *pseudocode* example. Each server platform and programming language has a different way of handling requests, making HTTP API calls, and serving responses to the browser.
-            
-            // 1. Set up your server to make calls to PayPal
-            
-            // 1a. Add your client ID and secret
-            PAYPAL_CLIENT = 'PAYPAL_SANDBOX_CLIENT';
-            PAYPAL_SECRET = 'PAYPAL_SANDBOX_SECRET';
-            
-            // 1b. Point your server to the PayPal API
-            PAYPAL_OAUTH_API         = 'https://api.sandbox.paypal.com/v1/oauth2/token/';
-            PAYPAL_AUTHORIZATION_API = 'https://api.sandbox.paypal.com/v2/payments/authorizations/';
-            
-            // 1c. Get an access token from the PayPal API
-            basicAuth = base64encode(`${ PAYPAL_CLIENT }:${ PAYPAL_SECRET }`);
-            auth = http.post(PAYPAL_OAUTH_API {
-              headers: {
-                Accept:        `application/json`,
-                Authorization: `Basic ${ basicAuth }`
-              },
-              data: `grant_type=client_credentials`
-            });
-            
-            // 2. Set up your server to receive a call from the client
-            function handleRequest(request, response) {
-            
-              // 2a. Get the order ID from the request body
-              orderID = request.body.orderID;
-            
-              // 3. Call PayPal to get the transaction details
-              details = http.get(PAYPAL_ORDER_API + orderID, {
-                headers: {
-                  Accept:        `application/json`,
-                  Authorization: `Bearer ${ auth.access_token }`
-                }
-              });
-            
-              // 4. Handle any errors from the call
-              if (details.error) {
-                return response.send(500);
-              }
-            
-              // 5. Validate the transaction details are as expected
-              if (details.purchase_units[0].amount.value !== '5.77') {
-                return response.send(400);
-              }
-            
-              // 6. Save the transaction in your database
-              database.saveTransaction(orderID);
-            
-              // 7. Return a successful response to the client
-              return response.send(200);
-            }
-              </script>
+           
             
           </div>
     
@@ -467,15 +366,15 @@
                    {% for newMoviess in newMovies %}
                    <div class="col-sm-3 auto">
                       <div style="" >
-                        <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:250px; height:400px;">
-                        <a href="{% url 'moviesDetail' pk=newMoviess.pk %}" style="color:#fff;">
+                        <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;">
+                        <a href="{% url 'moviesDetail' pk=newMoviess.pk %}" style="color:#fff; font-size: 12px;">
                             {{ newMoviess.title }} 
                         </a>            
                         <br>             
-                        <a class="card-text" style="color: grey;">{{ newMoviess.description }}</a> 
-                        <p class="card-text" style="color: grey;" >{{ newMoviess.publishedDate }}</p> 
-                        <a class="btn btn-danger">Watch Trailer</a>
-                        <a class="btn btn-danger">Decoder</a>
+                        <a class="card-text" style="color: grey; font-size: 12px;">{{ newMoviess.description }}</a> 
+                        <p class="card-text" style="color: grey; font-size: 12px;" >{{ newMoviess.publishedDate }}</p> 
+                        <!-- <a class="btn btn-danger">Watch Trailer</a>
+                        <a class="btn btn-danger">Decoder</a> -->
                       </div>
                       <br>
                     </div>  
@@ -500,26 +399,129 @@
   
         </div>
                          
-                    </div>
+        
+      </div>
+      
 
                     
               </div>
-            <!-- DataTales Example -->
-           
-      <!-- End of Main Content -->
-
-     
-
+               <!-- footer -->
+   <footer class="sticky-footer" style="background-color:black;">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; XTREME 2019</span>
+      </div>
     </div>
-    <!-- End of Content Wrapper -->
+  </footer>
+  <!-- end of footer -->
+    </div>
+  
 
   </div>
   <!-- End of Page Wrapper -->
-  <footer class="sticky-footer bg-white">
-      <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-          <span>Copyright &copy; Show Time 2019</span>
-        </div>
-      </div>
-    </footer>
+  
 {% endblock %}
+
+<!-- 
+<script>
+    paypal.Buttons().render('#paypal-button-container');
+  </script>
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '0.01'
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        // Capture the funds from the transaction
+        return actions.order.capture().then(function(details) {
+          // Show a success message to your buyer
+          alert('Transaction completed by ' + details.payer.name.given_name);
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '0.01'
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Transaction completed by ' + details.payer.name.given_name);
+          // Call your server to save the transaction
+          return fetch('/paypal-transaction-complete', {
+            method: 'post',
+            body: JSON.stringify({
+              orderID: data.orderID
+            })
+          });
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
+  <script>
+  // Note: This code is intended as a *pseudocode* example. Each server platform and programming language has a different way of handling requests, making HTTP API calls, and serving responses to the browser.
+
+// 1. Set up your server to make calls to PayPal
+
+// 1a. Add your client ID and secret
+PAYPAL_CLIENT = 'PAYPAL_SANDBOX_CLIENT';
+PAYPAL_SECRET = 'PAYPAL_SANDBOX_SECRET';
+
+// 1b. Point your server to the PayPal API
+PAYPAL_OAUTH_API         = 'https://api.sandbox.paypal.com/v1/oauth2/token/';
+PAYPAL_AUTHORIZATION_API = 'https://api.sandbox.paypal.com/v2/payments/authorizations/';
+
+// 1c. Get an access token from the PayPal API
+basicAuth = base64encode(`${ PAYPAL_CLIENT }:${ PAYPAL_SECRET }`);
+auth = http.post(PAYPAL_OAUTH_API {
+  headers: {
+    Accept:        `application/json`,
+    Authorization: `Basic ${ basicAuth }`
+  },
+  data: `grant_type=client_credentials`
+});
+
+// 2. Set up your server to receive a call from the client
+function handleRequest(request, response) {
+
+  // 2a. Get the order ID from the request body
+  orderID = request.body.orderID;
+
+  // 3. Call PayPal to get the transaction details
+  details = http.get(PAYPAL_ORDER_API + orderID, {
+    headers: {
+      Accept:        `application/json`,
+      Authorization: `Bearer ${ auth.access_token }`
+    }
+  });
+
+  // 4. Handle any errors from the call
+  if (details.error) {
+    return response.send(500);
+  }
+
+  // 5. Validate the transaction details are as expected
+  if (details.purchase_units[0].amount.value !== '5.77') {
+    return response.send(400);
+  }
+
+  // 6. Save the transaction in your database
+  database.saveTransaction(orderID);
+
+  // 7. Return a successful response to the client
+  return response.send(200);
+}
+  </script> -->

@@ -449,33 +449,50 @@
         </div>
         <div class="container">
             
-            <div class="col-md-3">
-                <h1 class="h3 mb-2 text-gray-800">Dashboard</h1>
+            <div class="">
+            <h1 class="h3 mb-2 text-gray-800">Dashboard</h1>
             {% if newMovies.title %}
+              
 
-              <img class="card-img-top" src="{{ newMovies.movieImages.url }}" alt="Movies">
-              <h4 class="card-title" style="color:#fff;">{{ newMovies.title}}</h4>
-              <p class="card-text" style="color: grey;">{{newMovies.description}}</p>
-              <p class="card-text" style="color: grey;">{{newMovies.publishedDate}}</p>
-              <a class="btn btn-danger">Watch Trailer</a>
+              <img class="card-img-top" src="{{ newMovies.movieImages.url }}" alt="Movies"  style="width:230px; height:300px;">
+              <div style="margin-top:-50px">
+                  <p>kkkk</p>
+                 </div>
+              <br>
+              <a class="card-title" style="color:#fff; font-size:12px;">{{newMovies.title}}</a>
+              <br>
+            
+              <a class="card-text" style="color: grey; font-size:12px;">{{newMovies.genre}}</a> 
+              <!-- <a class="card-text" style="color: grey; font-size:12px;">{{newMovies.description}}</a>        -->
+              <p class="card-text" style="color: grey; font-size:12px;">{{newMovies.publishedDate}}</p>
+              <a class="btn btn-danger" >Watch Trailer</a>
               <a class="btn btn-danger">Decoder</a>
-              <hr>
+             <br>
+
+            
+
               <div >
-              <h5 style="color:#fff;">Director</h5>
-              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="50px;" height="50px;">
+              <h5 class="text-center" style="color:#fff;">Directed By</h5>
+              <hr>
+              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="100px;" height="100px;">
+              
               </div>
-              <hr>
+              
               <div >
-              <h5 style="color:#fff;">Actors</h5>
-              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="50px;" height="50px;">
-              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="50px;" height="50px;">
+              <h5 class="text-center"style="color:#fff;">Cast</h5>
+              <hr>
+              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
               <div style="padding-bottom:25px;"></div>
               </div>
-              </div>
-  
             {% endif %}
+            asds
+          </div>
 
-            <button id="paypal">PayPal</button>
+
+            <!-- <button id="paypal">PayPal</button> -->
             </div>
             
     </div>
@@ -505,9 +522,11 @@
   </div>
   <!-- End of Page Wrapper -->
 
-  <footer class="sticky-footer bg-black">
+  <footer class="sticky-footer" style="background-color:black;">
       <div class="container my-auto">
+        
         <div class="copyright text-center my-auto">
+          <img src="{% static 'img/footer.png' %}" width="60px" height="60px">
           <span>Copyright &copy; Show Time 2019</span>
         </div>
       </div>

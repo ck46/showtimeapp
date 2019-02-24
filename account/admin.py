@@ -2,17 +2,17 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from django.contrib.auth import get_user_model
+# from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
-from .forms import CustomUserCreationForm , SignUpForm
-from .models import CustomUser
+from .forms import *
+from account.models import CustomUser
+
+admin.site.register(User)
 
 # Register your models here.
-# class CustomUserAdmin(UserAdmin):
-#     add_form = CustomUserCreationForm
-#     form = CustomUserCreationForm
-#     model = CustomUser
-#     list_display = ['username', 'email']
+class CustomUserAdmin(UserAdmin):
+    model = CustomUser
+    list_display = ['username', 'first_name', 'last_name','phonenumber' , 'iucnumber' ,'email']
 
-# admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(CustomUser, CustomUserAdmin)

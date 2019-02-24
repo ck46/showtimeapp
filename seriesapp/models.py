@@ -6,11 +6,25 @@ from django.utils.dateparse import parse_datetime
 from django.db import models
 # Create your models here.
 
+# Genre
+class Genre(models.Model):
+    title = models.CharField(max_length=200)
+    active = models.BooleanField(default=True)
+    publishedDate = models.DateTimeField(
+        blank=True, null=True
+    )
+    genreImages = models.FileField(upload_to='Series/GenreImage/', blank=False, null=True)
+
+    def __unicode__(self):
+        title = str(self.title)
+        return title 
+
 
 # Series 
 class Series(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     title = models.CharField(max_length=200)
+    genres = models.ForeignKey(Genre)
     description = models.TextField(null=True, blank=True)
     active = models.BooleanField(default=True)
     publishedDate = models.DateTimeField(
@@ -24,17 +38,4 @@ class Series(models.Model):
         return title 
 
 
-# Genre
-class Genre(models.Model):
-    
-    series = models.ForeignKey(Series)
-    title = models.CharField(max_length=200)
-    active = models.BooleanField(default=True)
-    publishedDate = models.DateTimeField(
-        blank=True, null=True
-    )
-    genreImages = models.FileField(upload_to='Series/GenreImage/', blank=False, null=True)
 
-    def __unicode__(self):
-        title = str(self.title)
-        return title 
