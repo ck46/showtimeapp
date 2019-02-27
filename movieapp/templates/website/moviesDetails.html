@@ -442,51 +442,60 @@
 
             
             <div class="">
-
+                
               
             {% if newMovies.title %}
-              
-
-              <img class="card-img-top" src="{{ newMovies.movieImages.url }}" alt="Movies"  style="width:230px; height:300px;">
-              <!-- <div style="margin-top:-50px">
-                  <p>kkkk</p>
-                 </div> -->
-              <br>
-              <a class="card-title" style="color:#fff; font-size:12px;">{{newMovies.title}}</a>
-              <br>
-            
-              <a class="card-text" style="color: grey; font-size:12px;">{{newMovies.genre}}</a> 
-              <!-- <a class="card-text" style="color: grey; font-size:12px;">{{newMovies.description}}</a>        -->
-              <p class="card-text" style="color: grey; font-size:12px;">{{newMovies.publishedDate}}</p>
-              
-             <br>
-
-            
-
-              <div >
-                  <h5 class="text-left" style="color:#fff;">Directed By
-                      <hr class="text-left" style="margin-left:-1px;width:10%">
-                  </h5>
+            <div style="padding-left:30%;">
+                <div>
                   
+                </div>
+                <p style="color:white;">Description</p>
+                <p style="color:#fff; font-size:12px;">{{newMovies.description}}</p>
+
+               </div>
+
+               <div style="margin-top:-13%;">
+                  <img class="card-img-top" src="{{ newMovies.movieImages.url }}" alt="Movies"  style="width:230px; height:300px;">
               
-              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="100px;" height="100px;">
-             
-              
-              </div>
-              
-              <div >
-                  <h5 class="text-left"style="color:#fff;">Cast
-                      <hr class="text-left" style="margin-left:-1px;width:5%">
-                  </h5>
+                  <br>
+                  <a class="card-title" style="color:#fff; font-size:12px;">{{newMovies.title}}</a>
+                  <br>
+                
+                  <a class="card-text" style="color: grey; font-size:12px;">{{newMovies.genre}}</a> 
+                  <!-- <a class="card-text" style="color: grey; font-size:12px;">{{newMovies.description}}</a>        -->
+                  <p class="card-text" style="color: grey; font-size:12px;">{{newMovies.publishedDate}}</p>
+                  
+                 <br>
+    
+                
+    
+                  <div >
+                      <h5 class="text-left" style="color:#fff;">Directed By
+                          <hr class="text-left" style="margin-left:-1px;width:10%">
+                      </h5>
+                      
+                  
+                  <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="100px;" height="100px;">
                  
-              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
-              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
-              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
-              <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
-              <div style="padding-bottom:25px;"></div>
-             
-              
-              </div>
+                  
+                  </div>
+                  
+                  <div >
+                      <h5 class="text-left"style="color:#fff;">Cast
+                          <hr class="text-left" style="margin-left:-1px;width:5%">
+                      </h5>
+                     
+                  <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                  <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                  <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                  <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                  <div style="padding-bottom:25px;"></div>
+                 
+                  
+                  </div>
+               </div>
+
+            
             {% endif %}
               
           </div>
