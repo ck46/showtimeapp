@@ -14,38 +14,36 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#1c0238;">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" ef="#">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">XTREME</div>
+        <!-- <div class="sidebar-brand-text mx-3">XTREME</div> -->
       </a>
 
       <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+      <div class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
             <a class="nav-link" href="{% url 'dashboardPage' %}">
               <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>Dashboard</span></a>
+              <span>XTREME</span></a>
           </li>
     
           <!-- Divider -->
-          <hr class="sidebar-divider">
+       
     
           <!-- Heading -->
-          <div class="sidebar-heading">
-            Movies | Series 
-          </div>
+         
     
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Movie" aria-expanded="true" aria-controls="collapseTwo">
             
-              <span>Movie</span>
+                <span>NEW MOVIE | TV SHOWS</span>
             </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div id="Movie" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header"></h6>
                 <a class="collapse-item" href="{% url 'moviesList' %}">Movie List</a>
@@ -59,20 +57,16 @@
           
     
           <!-- Divider -->
-          <hr class="sidebar-divider">
+       
     
-          <!-- Heading -->
-          <div class="sidebar-heading">
-                ACTION
-          </div>
     
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Action" aria-expanded="true" aria-controls="collapsePages">
               
               <span>ACTION</span>
             </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div id="Action" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Series:</h6>
                 <a class="collapse-item" href="#">Series</a>
@@ -82,20 +76,16 @@
           </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+         
     
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                  DRAMA 
-            </div>
-      
+           
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Drama" aria-expanded="true" aria-controls="collapsePages">
                 
                 <span>DRAMA</span>
               </a>
-              <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div id="Drama" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                   <h6 class="collapse-header">Series:</h6>
                   <a class="collapse-item" href="#">Series</a>
@@ -105,20 +95,16 @@
             </li>
 
 
-            <hr class="sidebar-divider">
+         
     
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                  COMEDY
-            </div>
       
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Comedy" aria-expanded="true" aria-controls="collapsePages">
                 
                 <span>COMEDY</span>
               </a>
-              <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div id="Comedy" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                   <h6 class="collapse-header">Series:</h6>
                   <a class="collapse-item" href="#">Series</a>
@@ -130,20 +116,15 @@
 
 
 
-            <hr class="sidebar-divider">
+         
     
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                  HORROR
-            </div>
-      
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Horror" aria-expanded="true" aria-controls="collapsePages">
                 
                 <span>HORROR</span>
               </a>
-              <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div id="Horror" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                   <h6 class="collapse-header">Series:</h6>
                   <a class="collapse-item" href="#">Series</a>
@@ -155,20 +136,17 @@
 
 
 
-            <hr class="sidebar-divider">
+         
     
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                  ANIMATION
-            </div>
+            
       
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Animation" aria-expanded="true" aria-controls="collapsePages">
                 
                 <span>ANIMATION</span>
               </a>
-              <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div id="Animation" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                   <h6 class="collapse-header">Series:</h6>
                   <a class="collapse-item" href="#">Series</a>
@@ -180,20 +158,19 @@
 
 
 
-            <hr class="sidebar-divider">
+         
     
             <!-- Heading -->
-            <div class="sidebar-heading">
-                  THRILLER
-            </div>
+            
+          
       
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Thriller" aria-expanded="true" aria-controls="collapsePages">
                 
                 <span>THRILLER</span>
               </a>
-              <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div id="Thriller" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                   <h6 class="collapse-header">Series:</h6>
                   <a class="collapse-item" href="#">Series</a>
@@ -205,20 +182,18 @@
 
 
 
-            <hr class="sidebar-divider">
+         
     
             <!-- Heading -->
-            <div class="sidebar-heading">
-                  CLASSIC
-            </div>
+            
       
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Classic" aria-expanded="true" aria-controls="collapsePages">
                 
                 <span>CLASSIC</span>
               </a>
-              <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div id="Classic" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                   <h6 class="collapse-header">Series:</h6>
                   <a class="collapse-item" href="#">Series</a>
@@ -228,43 +203,81 @@
             </li>
 
 
+            <hr style="border: 1px dashed black;" >
+           
+  
+            <div style="padding-top:100px;"></div>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MostViewed" aria-expanded="true" aria-controls="collapsePages">
+                  
+                  <span>Most Viewed</span>
+                </a>
+                <div id="MostViewed" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                   
+                    
+                    <a class="collapse-item" href="#">Most Viewed</a>
+                  </div>
+                </div>
+              </li>
+  
+  
+              <li class="nav-item">
+                  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Artist" aria-expanded="true" aria-controls="collapsePages">
+                    
+                    <span>Artist of the month</span>
+                  </a>
+                  <div id="Artist" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                      
+                      <a class="collapse-item" href="#">Artist</a>
+                    </div>
+                  </div>
+                </li>
+  
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#GenreList" aria-expanded="true" aria-controls="collapsePages">
+                      
+                      <span>Genre of the Movie</span>
+                    </a>
+                    <div id="GenreList" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                      <div class="bg-white py-2 collapse-inner rounded">
+                       
+                        <a class="collapse-item" href="#">Genre</a>
+                      </div>
+                    </div>
+                  </li>
+    
+  
           <!-- Divider -->
-          <hr class="sidebar-divider">
+         
     
-          <!-- Heading -->
-          <div class="sidebar-heading">
-                Accounts Section
-          </div>
-    
+         
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccount" aria-expanded="true" aria-controls="collapsePages">
               
               <span>Accounts</span>
             </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div id="collapseAccount" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Account Screens:</h6>
+                <a class="collapse-item" href="{% url 'my_account' %}">Account</a>
                 <a class="collapse-item" href="{% url 'logout' %}">Logout</a>
               </div>
             </div>
           </li>
-    
 
-          <hr class="sidebar-divider">
-    
-          <!-- Heading -->
-          <div class="sidebar-heading">
-                Contact
-          </div>
+      
           
           
     
           <!-- Divider -->
-          <hr class="sidebar-divider d-none d-md-block">
+          
 
           <div class="col-md-2">
-            <script>
+            <!-- <script>
                 paypal.Buttons().render('#paypal-button-container');
               </script>
               <script>
@@ -365,7 +378,7 @@
               // 7. Return a successful response to the client
               return response.send(200);
             }
-              </script>
+              </script> -->
             
           </div>
     
@@ -396,16 +409,7 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+        
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -533,8 +537,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{user}}</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
+                <div class="img-profile rounded-circle">{{user.profileImages}}</div>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -563,36 +566,51 @@
         <!-- End of Topbar -->
 
         
+          <div>
+             
+              <br>
+          </div>
+         
+
        
         <div class="container">
-
+            <div class="text-right">
+                <form action="#">
+                  <input type="text" placeholder="Search.." name="search" style="background-color:#1c0238; color:#fff; .search-container {
+                    float: right;">
+                  <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+          <hr>
+            <div class="row">
+              
+                  
+                {% for newSeriess in newSeries %}
+                <div class="col-sm-3 auto">
+                   <div style="" >
+                     <img src="{{ newSeriess.seriesImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;">
+                     <a href="{% url 'seriesDetail' pk=newSeriess.pk %}" style="color:#fff; font-size: 12px;">
+                         {{ newSeriess.title }} 
+                     </a>            
+                     <br>             
+                     <a class="card-text" style="color: grey; font-size: 12px;">{{ newSeriess.genre }}</a> 
+                     <p class="card-text" style="color: grey; font-size: 12px;" >{{ newSeriess.publishedDate }}</p> 
+                     <!-- <a class="btn btn-danger">Watch Trailer</a>
+                     <a class="btn btn-danger">Decoder</a> -->
+                   </div>
+                   <br>
+                 </div>  
+                 {% endfor %}
+                
+             </div>  
           </div>
 
+          
+
+         
 
 
-
-          <div class="container">
-              <h1 class="h3 mb-2 text-gray-800">Dashboard</h1>
-              <div class="row">
-                
-                 {% for newSeriess in newSeries %}
-                 <div class="col-sm-3 auto">
-                    <div style="" >
-                      <img src="{{ newSeriess.seriesImages.url }}" alt="Series" alt="Series" class="testImage" style="width:250px; height:400px;">
-                      <a href="{% url 'seriesDetail' pk=newSeriess.pk %}" style="color:#fff;">
-                          {{ newSeriess.title }} 
-                      </a>            
-                      <br>             
-                      <a class="card-text" style="color: grey;">{{ newSeriess.description }}</a> 
-                      <p class="card-text" style="color: grey;" >{{ newSeriess.publishedDate }}</p> 
-                      <a class="btn btn-danger">Watch Trailer</a>
-                      <a class="btn btn-danger">Decoder</a>
-                    </div>
-                    <br>
-                  </div>  
-                  {% endfor %}
-                 
-              </div>   
+          
                           
               
               <!-- erer -->

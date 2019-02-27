@@ -16,8 +16,8 @@ urlpatterns = [
     url(r'^movie/(?P<pk>\d+)/remove/$', views.moviesRemove, name='moviesRemove'),
 
     # Genres
-    url(r'^genreList/$', views.genresList, name='genreProductList'),
-    url(r'^/(?P<pk>\d+)/$', views.genresDetail, name='genresDetail'),
+    url(r'^genresMoviesList/$', views.genresMoviesList, name='genreMoviesList'),
+    url(r'^/(?P<pk>\d+)/$', views.genresMoviesDetail, name='genresMoviesDetail'),
     url(r'^genre/new/$', views.newGenres, name='newGenres'),
     url(r'^genre/(?P<pk>\d+)/edit/$', views.genresEdit, name='genreEdit'),
     url(r'^/(?P<pk>\d+)/remove/$', views.genresRemove, name='genreRemove'),

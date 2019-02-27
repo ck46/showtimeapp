@@ -39,4 +39,35 @@ class Movie(models.Model):
         return title 
 
 
+# Director
+class Director(models.Model):
+    movies = models.ForeignKey(Movie)
+    directorName  = models.CharField(max_length=200)
+    active = models.BooleanField(default=True)
+    publishedDate = models.IntegerField(
+        blank=True, null=True
+    )
+    directorImages = models.FileField(upload_to='Movie/DirectorImage/', blank=False, null=True)
+
+    def __unicode__(self):
+        directorName = str(self.directorName)
+        return directorName 
+
+
+# Actors 
+class Actor(models.Model):
+    movies = models.ForeignKey(Movie)
+    description = models.CharField(max_length=200)
+    publishedDate = models.IntegerField(
+        blank=True, null=True
+    )
+    mainActorImages = models.FileField(upload_to='Movie/ActorsImage/', blank=False, null=True)
+    secondActorImages = models.FileField(upload_to='Movie/ActorsImage/', blank=False, null=True)
+    thirdActorImages = models.FileField(upload_to='Movie/ActorsImage/', blank=False, null=True)
+    fourthActorImages = models.FileField(upload_to='Movie/ActorsImage/', blank=False, null=True)
+
+    def __unicode__(self):
+        description = str(self.description)
+        return description
+
 

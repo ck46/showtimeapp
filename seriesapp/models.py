@@ -27,7 +27,7 @@ class Series(models.Model):
     genres = models.ForeignKey(Genre)
     description = models.TextField(null=True, blank=True)
     active = models.BooleanField(default=True)
-    publishedDate = models.DateTimeField(
+    publishedDate = models.IntegerField(
         blank=True, null=True
     )
     seriesImages = models.FileField(upload_to='Series/SeriesImage/', blank=False, null=True)

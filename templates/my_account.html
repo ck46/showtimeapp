@@ -1,16 +1,577 @@
-{% extends 'base.html' %}
-<!-- aa -->
-{% block title %}My account{% endblock %} {% block breadcrumb %}
-<li class="breadcrumb-item active">My account</li>
-{% endblock %} {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-lg-6 col-md-8 col-sm-10">
-      <form method="post" novalidate>
-        {% csrf_token %} {% include 'includes/form.html' %}
-        <button type="submit" class="btn btn-success">Save changes</button>
-      </form>
+{% extends 'base.html' %} 
+{% load static %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content  %}
+
+
+<body id="page-top" style="background-color:#2c2135;">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper" >
+
+    <!-- Sidebar -->
+   <!-- Sidebar -->
+   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#6efdfd;">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">XTREME</div>
+      </a>
+
+      <li class="nav-item active">
+          <a class="nav-link" href="{% url 'dashboardPage' %}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+           
+        </li>
+  
+        <!-- Divider -->
+       
+  
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          
+            <span>NEW MOVIE | TV SHOWS</span>
+          </a>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              
+              <a class="collapse-item" href="{% url 'dashboardPage' %}">Series List</a>
+            </div>
+          </div>
+        </li>
+  
+  
+        <!-- Divider -->
+       
+  
+      
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Action" aria-expanded="true" aria-controls="collapsePages">
+            
+            <span>ACTION</span>
+          </a>
+          <div id="Action" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 ">
+             
+              <a class="collapse-item" href="#">ACTION</a>
+              
+            </div>
+          </div>
+        </li>
+
+          <!-- Divider -->
+         
+  
+          
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Drama" aria-expanded="true" aria-controls="collapsePages">
+              
+              <span>DRAMA</span>
+            </a>
+            <div id="Drama" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+               
+                <a class="collapse-item" href="#">DRAMA</a>
+                
+              </div>
+            </div>
+          </li>
+
+
+         
+  
+          
+    
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Comedy" aria-expanded="true" aria-controls="collapsePages">
+              
+              <span>COMEDY</span>
+            </a>
+            <div id="Comedy" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+              
+                <a class="collapse-item" href="#">COMEDY</a>
+                
+              </div>
+            </div>
+          </li>
+
+
+
+
+         
+  
+          
+    
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Horror" aria-expanded="true" aria-controls="collapsePages">
+              
+              <span>HORROR</span>
+            </a>
+            <div id="Horror" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+             
+                <a class="collapse-item" href="#">HORROR</a>
+                
+              </div>
+            </div>
+          </li>
+
+
+
+
+         
+  
+          
+    
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Animation" aria-expanded="true" aria-controls="collapsePages">
+              
+              <span>ANIMATION</span>
+            </a>
+            <div id="Animation" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+               
+                <a class="collapse-item" href="#">ANIMATION</a>
+                
+              </div>
+            </div>
+          </li>
+
+
+
+
+         
+  
+
+
+
+         
+  
+          
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Classic" aria-expanded="true" aria-controls="collapsePages">
+              
+              <span>CLASSIC</span>
+            </a>
+            <div id="Classic" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+               
+                <a class="collapse-item" href="#">Series</a>
+                
+              </div>
+            </div>
+          </li>
+
+
+          <hr style="border: 1px dashed black;" >
+         
+
+          <div style="padding-top:100px;"></div>
+
+          <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MostViewed" aria-expanded="true" aria-controls="collapsePages">
+                
+                <span>Most Viewed</span>
+              </a>
+              <div id="MostViewed" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                 
+                  
+                  <a class="collapse-item" href="#">Most Viewed</a>
+                </div>
+              </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Artist" aria-expanded="true" aria-controls="collapsePages">
+                  
+                  <span>Artist of the month</span>
+                </a>
+                <div id="Artist" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    
+                    <a class="collapse-item" href="#">Artist</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#GenreList" aria-expanded="true" aria-controls="collapsePages">
+                    
+                    <span>Genre of the Movie</span>
+                  </a>
+                  <div id="GenreList" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                     
+                      <a class="collapse-item" href="#">Genre</a>
+                    </div>
+                  </div>
+                </li>
+  
+
+        <!-- Divider -->
+       
+  
+       
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccount" aria-expanded="true" aria-controls="collapsePages">
+            
+            <span>Accounts</span>
+          </a>
+          <div id="collapseAccount" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Account Screens:</h6>
+              <a class="collapse-item" href="{% url 'my_account' %}">Account</a>
+              <a class="collapse-item" href="{% url 'logout' %}">Logout</a>
+            </div>
+          </div>
+        </li>
+  
+
+        
+    
+          
+    
+         
+    
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+          <nav class="navbar navbar-expand navbar  topbar mb-4 static-top shadow" style="background-color:#1c0238;">
+
+              <div class="Pays">
+  
+              </div>
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
+  
+            <!-- Topbar Search -->
+           
+  
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+  
+              <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+              <li class="nav-item dropdown no-arrow d-sm-none">
+                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-search fa-fw"></i>
+                </a>
+                <!-- Dropdown - Messages -->
+                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                  <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group">
+                      <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                          <i class="fas fa-search fa-sm"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </li>
+  
+            
+  
+            
+  
+              <div class="topbar-divider d-none d-sm-block"></div>
+  
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{user}}</span>
+                  <img src="{{user.profileImages}}" class="rounded">
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                 
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'logout' %}" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+  
+            </ul>
+  
+          </nav>
+          <!-- End of Topbar -->
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            
+           
+
+            <div class="container">
+
+              
+
+                <!-- <div class="text-right">
+                    <form action="#">
+                      <input type="text" placeholder="Search.." name="search" style="background-color:#1c0238; color:#fff; .search-container {
+                        float: right;">
+                      <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+                 -->
+                <hr>
+
+                
+                
+                <div class="row">
+                  
+                    <div class="col-md-12">
+         
+   
+
+                        <div class="card card-default">
+                            <div class="card-header" style="background-color:red;">Account</div>
+                            <div class="card-body card-6-6">
+                             
+                                <div class="row">
+                                    <div class="col-md-4" >
+                                        <p class="text-left">Username: {{user}} </p>
+                                    </div>
+                                    
+                                </div>
+                  
+                                <hr>
+                  
+                  
+                            <div class="row">
+                           
+                            <div class="col-md-4" >
+                                <p >First Name: {{user.first_name}}</p>
+                            </div>
+                  
+                            <div class="col-md-4" >
+                                <p >Last Name: {{user.last_name}}</p>
+                              </div>
+                  
+                              <div class="col-md-4" >
+                                  <p >Telephome: {{user.phonenumber}}</p>
+                              </div>
+                         
+                            </div>
+                  
+                            <hr>
+                  
+                            <div class="row">
+                            
+                            <div class="col-md-4" >
+                                <p >Email: {{user.email}}</p>
+                            </div>
+                  
+                            <div class="col-md-4" >
+                                <p >IUc Number: {{user.icunumber}}</p>
+                              </div>
+                  
+                              <div class="col-md-4" >
+                                  <p >Decoder Type: {{user.decodetype}}</p>
+                              </div>
+                         
+                            </div>
+
+                            <hr>
+                  
+                            <div class="row">
+                            
+                            <!-- <div class="col-md-4" >
+                                <p >Change Password: ******</p>
+                            </div> -->
+                  
+                            <div class="col-md-4" >
+                                <p >Picture: {{user.profileImages}}</p>
+                              </div>
+                  
+                              <!-- <div class="col-md-4" >
+                                  <p >Decoder Type:</p>
+                              </div>
+                          -->
+                            </div>
+                            
+                            
+                          </div>
+                  
+                      
+                      
+                  </div>
+                  </div>
+                  
+                </div>   
+                            
+                
+                <!-- erer -->
+                  
+                
+              <!-- adsda -->
+                   
+                  </div>
+        <!-- Begin Page Content -->
+        
+            
+            <div class="col-sm-3">
+                <div class="row">
+                    
+                    </div>
+  
+        </div>
+                         
+        
+      </div>
+      
+
+                    
+             
     </div>
+  
+
   </div>
-</div>
+  <!-- End of Page Wrapper -->
+  
+
+
+<!-- 
+<script>
+    paypal.Buttons().render('#paypal-button-container');
+  </script>
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '0.01'
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        // Capture the funds from the transaction
+        return actions.order.capture().then(function(details) {
+          // Show a success message to your buyer
+          alert('Transaction completed by ' + details.payer.name.given_name);
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '0.01'
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Transaction completed by ' + details.payer.name.given_name);
+          // Call your server to save the transaction
+          return fetch('/paypal-transaction-complete', {
+            method: 'post',
+            body: JSON.stringify({
+              orderID: data.orderID
+            })
+          });
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
+  <script>
+  // Note: This code is intended as a *pseudocode* example. Each server platform and programming language has a different way of handling requests, making HTTP API calls, and serving responses to the browser.
+
+// 1. Set up your server to make calls to PayPal
+
+// 1a. Add your client ID and secret
+PAYPAL_CLIENT = 'PAYPAL_SANDBOX_CLIENT';
+PAYPAL_SECRET = 'PAYPAL_SANDBOX_SECRET';
+
+// 1b. Point your server to the PayPal API
+PAYPAL_OAUTH_API         = 'https://api.sandbox.paypal.com/v1/oauth2/token/';
+PAYPAL_AUTHORIZATION_API = 'https://api.sandbox.paypal.com/v2/payments/authorizations/';
+
+// 1c. Get an access token from the PayPal API
+basicAuth = base64encode(`${ PAYPAL_CLIENT }:${ PAYPAL_SECRET }`);
+auth = http.post(PAYPAL_OAUTH_API {
+  headers: {
+    Accept:        `application/json`,
+    Authorization: `Basic ${ basicAuth }`
+  },
+  data: `grant_type=client_credentials`
+});
+
+// 2. Set up your server to receive a call from the client
+function handleRequest(request, response) {
+
+  // 2a. Get the order ID from the request body
+  orderID = request.body.orderID;
+
+  // 3. Call PayPal to get the transaction details
+  details = http.get(PAYPAL_ORDER_API + orderID, {
+    headers: {
+      Accept:        `application/json`,
+      Authorization: `Bearer ${ auth.access_token }`
+    }
+  });
+
+  // 4. Handle any errors from the call
+  if (details.error) {
+    return response.send(500);
+  }
+
+  // 5. Validate the transaction details are as expected
+  if (details.purchase_units[0].amount.value !== '5.77') {
+    return response.send(400);
+  }
+
+  // 6. Save the transaction in your database
+  database.saveTransaction(orderID);
+
+  // 7. Return a successful response to the client
+  return response.send(200);
+}
+  </script> -->
+
+
+
+<!-- end  -->
+
+
 {% endblock %}
+
+
+

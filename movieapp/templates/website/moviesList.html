@@ -8,104 +8,241 @@
 <body id="page-top" style="background-color:#2c2135;">
 
   <!-- Page Wrapper -->
-  <div id="wrapper">
+  <div id="wrapper" >
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#1c0238;">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#6efdfd;">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
         <div class="sidebar-brand-text mx-3">XTREME</div>
       </a>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-            <a class="nav-link" href="index.html">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>Dashboard</span></a>
-          </li>
-    
-          <!-- Divider -->
-          <hr class="sidebar-divider">
-    
-          <!-- Heading -->
-          <div class="sidebar-heading">
-            Movie Section
-          </div>
-    
-          <!-- Nav Item - Pages Collapse Menu -->
-          <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-              <i class="fas fa-fw fa-cog"></i>
-              <span>Movie | Series </span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header"></h6>
-                <a class="collapse-item" href="#"> Movie</a>
-               
-              </div>
-            </div>
-          </li>
-    
+          <a class="nav-link" href="{% url 'dashboardPage' %}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+           
+        </li>
+  
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+  
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           
-    
+            <span>NEW MOVIE | TV SHOWS</span>
+          </a>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              
+              <a class="collapse-item" href="#">Movie List</a>
+            </div>
+          </div>
+        </li>
+  
+  
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+  
+      
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Action" aria-expanded="true" aria-controls="collapsePages">
+            
+            <span>ACTION</span>
+          </a>
+          <div id="Action" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 ">
+             
+              <a class="collapse-item" href="#">ACTION</a>
+              
+            </div>
+          </div>
+        </li>
+
           <!-- Divider -->
           <hr class="sidebar-divider">
-    
-          <!-- Heading -->
-          <div class="sidebar-heading">
-                Movie | Series
-          </div>
-    
+  
+          
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-              <i class="fas fa-fw fa-folder"></i>
-              <span>Series Sevtion</span>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Drama" aria-expanded="true" aria-controls="collapsePages">
+              
+              <span>DRAMA</span>
             </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div id="Drama" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                
-                <a class="collapse-item" href="{% url 'dashboardPage'%}">Series List</a>
+                <a class="collapse-item" href="#">DRAMA</a>
                 
               </div>
             </div>
           </li>
-    
-          <!-- Divider -->
+
+
           <hr class="sidebar-divider">
-    
-          <!-- Heading -->
-          <div class="sidebar-heading">
-                Accounts Section
-          </div>
+  
+          
     
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-              <i class="fas fa-fw fa-folder"></i>
-              <span>Accounts</span>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Comedy" aria-expanded="true" aria-controls="collapsePages">
+              
+              <span>COMEDY</span>
             </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div id="Comedy" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Account Screens:</h6>
-                <a class="collapse-item" href="{% url 'logout' %}">Logout</a>
-                <!-- <a class="collapse-item" href="register.html">Register</a>
-                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                <div class="collapse-divider"></div>
-                <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a> -->
+              
+                <a class="collapse-item" href="#">COMEDY</a>
+                
               </div>
             </div>
           </li>
+
+
+
+
+          <hr class="sidebar-divider">
+  
+          
+    
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Horror" aria-expanded="true" aria-controls="collapsePages">
+              
+              <span>HORROR</span>
+            </a>
+            <div id="Horror" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+             
+                <a class="collapse-item" href="#">HORROR</a>
+                
+              </div>
+            </div>
+          </li>
+
+
+
+
+          <hr class="sidebar-divider">
+  
+          
+    
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Animation" aria-expanded="true" aria-controls="collapsePages">
+              
+              <span>ANIMATION</span>
+            </a>
+            <div id="Animation" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+               
+                <a class="collapse-item" href="#">ANIMATION</a>
+                
+              </div>
+            </div>
+          </li>
+
+
+
+
+         
+  
+
+
+
+          <hr class="sidebar-divider">
+  
+          
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Classic" aria-expanded="true" aria-controls="collapsePages">
+              
+              <span>CLASSIC</span>
+            </a>
+            <div id="Classic" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner rounded">
+               
+                <a class="collapse-item" href="#">Series</a>
+                
+              </div>
+            </div>
+          </li>
+
+
+          <hr class="sidebar-divider">
+
+          <hr>
+         
+
+
+          <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MostViewed" aria-expanded="true" aria-controls="collapsePages">
+                
+                <span>Most Viewed</span>
+              </a>
+              <div id="MostViewed" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                 
+                  
+                  <a class="collapse-item" href="#">Most Viewed</a>
+                </div>
+              </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Artist" aria-expanded="true" aria-controls="collapsePages">
+                  
+                  <span>Artist of the month</span>
+                </a>
+                <div id="Artist" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    
+                    <a class="collapse-item" href="#">Artist</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#GenreList" aria-expanded="true" aria-controls="collapsePages">
+                    
+                    <span>Genre of the Movie</span>
+                  </a>
+                  <div id="GenreList" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                     
+                      <a class="collapse-item" href="#">Genre</a>
+                    </div>
+                  </div>
+                </li>
+  
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+  
+       
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAccount" aria-expanded="true" aria-controls="collapsePages">
+            
+            <span>Accounts</span>
+          </a>
+          <div id="collapseAccount" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Account Screens:</h6>
+              <a class="collapse-item" href="{% url 'my_account' %}">Account</a>
+              <a class="collapse-item" href="{% url 'logout' %}">Logout</a>
+            </div>
+          </div>
+        </li>
+  
+
+        
     
           
     
@@ -113,108 +250,7 @@
           <hr class="sidebar-divider d-none d-md-block">
 
           <div class="col-md-2">
-            <script>
-                paypal.Buttons().render('#paypal-button-container');
-              </script>
-              <script>
-                paypal.Buttons({
-                  createOrder: function(data, actions) {
-                    return actions.order.create({
-                      purchase_units: [{
-                        amount: {
-                          value: '0.01'
-                        }
-                      }]
-                    });
-                  },
-                  onApprove: function(data, actions) {
-                    // Capture the funds from the transaction
-                    return actions.order.capture().then(function(details) {
-                      // Show a success message to your buyer
-                      alert('Transaction completed by ' + details.payer.name.given_name);
-                    });
-                  }
-                }).render('#paypal-button-container');
-              </script>
-              <script>
-                paypal.Buttons({
-                  createOrder: function(data, actions) {
-                    return actions.order.create({
-                      purchase_units: [{
-                        amount: {
-                          value: '0.01'
-                        }
-                      }]
-                    });
-                  },
-                  onApprove: function(data, actions) {
-                    return actions.order.capture().then(function(details) {
-                      alert('Transaction completed by ' + details.payer.name.given_name);
-                      // Call your server to save the transaction
-                      return fetch('/paypal-transaction-complete', {
-                        method: 'post',
-                        body: JSON.stringify({
-                          orderID: data.orderID
-                        })
-                      });
-                    });
-                  }
-                }).render('#paypal-button-container');
-              </script>
-              <script>
-              // Note: This code is intended as a *pseudocode* example. Each server platform and programming language has a different way of handling requests, making HTTP API calls, and serving responses to the browser.
-            
-            // 1. Set up your server to make calls to PayPal
-            
-            // 1a. Add your client ID and secret
-            PAYPAL_CLIENT = 'PAYPAL_SANDBOX_CLIENT';
-            PAYPAL_SECRET = 'PAYPAL_SANDBOX_SECRET';
-            
-            // 1b. Point your server to the PayPal API
-            PAYPAL_OAUTH_API         = 'https://api.sandbox.paypal.com/v1/oauth2/token/';
-            PAYPAL_AUTHORIZATION_API = 'https://api.sandbox.paypal.com/v2/payments/authorizations/';
-            
-            // 1c. Get an access token from the PayPal API
-            basicAuth = base64encode(`${ PAYPAL_CLIENT }:${ PAYPAL_SECRET }`);
-            auth = http.post(PAYPAL_OAUTH_API {
-              headers: {
-                Accept:        `application/json`,
-                Authorization: `Basic ${ basicAuth }`
-              },
-              data: `grant_type=client_credentials`
-            });
-            
-            // 2. Set up your server to receive a call from the client
-            function handleRequest(request, response) {
-            
-              // 2a. Get the order ID from the request body
-              orderID = request.body.orderID;
-            
-              // 3. Call PayPal to get the transaction details
-              details = http.get(PAYPAL_ORDER_API + orderID, {
-                headers: {
-                  Accept:        `application/json`,
-                  Authorization: `Bearer ${ auth.access_token }`
-                }
-              });
-            
-              // 4. Handle any errors from the call
-              if (details.error) {
-                return response.send(500);
-              }
-            
-              // 5. Validate the transaction details are as expected
-              if (details.purchase_units[0].amount.value !== '5.77') {
-                return response.send(400);
-              }
-            
-              // 6. Save the transaction in your database
-              database.saveTransaction(orderID);
-            
-              // 7. Return a successful response to the client
-              return response.send(200);
-            }
-              </script>
+           
             
           </div>
     
@@ -233,214 +269,124 @@
       <!-- Main Content -->
       <div id="content">
 
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar  topbar mb-4 static-top shadow" style="background-color:#1c0238;">
+          <nav class="navbar navbar-expand navbar  topbar mb-4 static-top shadow" style="background-color:#1c0238;">
 
-            <div class="Pays">
-
-            </div>
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
+              <div class="Pays">
+  
               </div>
-            </div>
-          </form>
-
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
+  
+            <!-- Topbar Search -->
+           
+  
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+  
+              <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+              <li class="nav-item dropdown no-arrow d-sm-none">
+                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-search fa-fw"></i>
+                </a>
+                <!-- Dropdown - Messages -->
+                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                  <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group">
+                      <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                          <i class="fas fa-search fa-sm"></i>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                </form>
-              </div>
-            </li>
-
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
+                  </form>
+                </div>
+              </li>
+  
+            
+  
+            
+  
+              <div class="topbar-divider d-none d-sm-block"></div>
+  
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{user}}</span>
+                  <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-             
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{user}}</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-
-          </ul>
-
-        </nav>
-        <!-- End of Topbar -->
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                 
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'my_account' %}" data-toggle="modal" data-target="#AccountModal">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Account
+                    </a>
+                  <a class="dropdown-item" href="{% url 'logout' %}" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+  
+            </ul>
+  
+          </nav>
+          <!-- End of Topbar -->
 
         <div class="container-fluid">
 
             <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800">Dashboard</h1>
-        </div>
+            
+           
 
-        <div class="container">
-            <div class="row">
-               {% for newMoviess in newMovies %}
-                        
-              <div class="col-sm-3 auto">
-                  <div  style="width:300px; height:150px;">
-                    <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:300px; height:400px;">
-                    <a href="{% url 'moviesDetail' pk=newMoviess.pk %}" style="color:#fff;">
-                        {{ newMoviess.title }} 
-                    </a>                         
-                    <p class="card-text" style="color: grey;">{{ newMoviess.description }}</p> 
-                    <p class="card-text" style="color: grey;" >{{ newMoviess.publishedDate }}</p> 
-                    <h4 class="card-title" style="color:#fff;">{{ newMovies.title}}</h4>
-                  </div>
-                </div>
-                        
-                        
-                {% endfor %}
+            <div class="container">
 
-                          
               
-                </div>
-              </div>
 
+                <div class="text-right">
+                    <form action="#">
+                      <input type="text" placeholder="Search.." name="search" style="background-color:#1c0238; color:#fff; .search-container {
+                        float: right;">
+                      <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                </div>
+
+                <hr>
+
+              
+                
+                <div class="row">
+                  
+                   {% for newMoviess in newMovies %}
+                   <div class="col-sm-3 auto">
+                      <div style="" >
+                        <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;">
+                        <a href="{% url 'moviesDetail' pk=newMoviess.pk %}" style="color:#fff; font-size: 12px;">
+                            {{ newMoviess.title }} 
+                        </a>            
+                        <br>             
+                        <a class="card-text" style="color: grey; font-size: 12px;">{{ newMoviess.description }}</a> 
+                        <p class="card-text" style="color: grey; font-size: 12px;" >{{ newMoviess.publishedDate }}</p> 
+                        <!-- <a class="btn btn-danger">Watch Trailer</a>
+                        <a class="btn btn-danger">Decoder</a> -->
+                      </div>
+                      <br>
+                    </div>  
+                    {% endfor %}
+                   
+                </div>   
+                            
+                
+                <!-- erer -->
+                  
+                
+              <!-- adsda -->
+                   
+                  </div>
         <!-- Begin Page Content -->
         
             
@@ -451,19 +397,120 @@
   
         </div>
                          
-                    </div>
+        
+      </div>
+      
 
                     
-              </div>
-            <!-- DataTales Example -->
-           
-      <!-- End of Main Content -->
-
-     
-
+             
     </div>
-    <!-- End of Content Wrapper -->
+  
 
   </div>
   <!-- End of Page Wrapper -->
+  
 {% endblock %}
+
+<!-- 
+<script>
+    paypal.Buttons().render('#paypal-button-container');
+  </script>
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '0.01'
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        // Capture the funds from the transaction
+        return actions.order.capture().then(function(details) {
+          // Show a success message to your buyer
+          alert('Transaction completed by ' + details.payer.name.given_name);
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '0.01'
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Transaction completed by ' + details.payer.name.given_name);
+          // Call your server to save the transaction
+          return fetch('/paypal-transaction-complete', {
+            method: 'post',
+            body: JSON.stringify({
+              orderID: data.orderID
+            })
+          });
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
+  <script>
+  // Note: This code is intended as a *pseudocode* example. Each server platform and programming language has a different way of handling requests, making HTTP API calls, and serving responses to the browser.
+
+// 1. Set up your server to make calls to PayPal
+
+// 1a. Add your client ID and secret
+PAYPAL_CLIENT = 'PAYPAL_SANDBOX_CLIENT';
+PAYPAL_SECRET = 'PAYPAL_SANDBOX_SECRET';
+
+// 1b. Point your server to the PayPal API
+PAYPAL_OAUTH_API         = 'https://api.sandbox.paypal.com/v1/oauth2/token/';
+PAYPAL_AUTHORIZATION_API = 'https://api.sandbox.paypal.com/v2/payments/authorizations/';
+
+// 1c. Get an access token from the PayPal API
+basicAuth = base64encode(`${ PAYPAL_CLIENT }:${ PAYPAL_SECRET }`);
+auth = http.post(PAYPAL_OAUTH_API {
+  headers: {
+    Accept:        `application/json`,
+    Authorization: `Basic ${ basicAuth }`
+  },
+  data: `grant_type=client_credentials`
+});
+
+// 2. Set up your server to receive a call from the client
+function handleRequest(request, response) {
+
+  // 2a. Get the order ID from the request body
+  orderID = request.body.orderID;
+
+  // 3. Call PayPal to get the transaction details
+  details = http.get(PAYPAL_ORDER_API + orderID, {
+    headers: {
+      Accept:        `application/json`,
+      Authorization: `Bearer ${ auth.access_token }`
+    }
+  });
+
+  // 4. Handle any errors from the call
+  if (details.error) {
+    return response.send(500);
+  }
+
+  // 5. Validate the transaction details are as expected
+  if (details.purchase_units[0].amount.value !== '5.77') {
+    return response.send(400);
+  }
+
+  // 6. Save the transaction in your database
+  database.saveTransaction(orderID);
+
+  // 7. Return a successful response to the client
+  return response.send(200);
+}
+  </script> -->

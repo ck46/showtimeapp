@@ -23,7 +23,7 @@ def moviesList(request):
     return render(request, 'website/moviesList.html', {'newMovies' : movieslist})
 
 #  Genre Product List
-def genresList(request):
+def genresMoviesList(request):
     genreslists = Genre.objects.all().order_by('publishedDate')
     return render(request, 'website/genreList.html', {'newGenres' : genreslists})
 
@@ -33,7 +33,7 @@ def moviesDetail(request, pk):
     return render(request, 'website/moviesDetails.html', {'newMovies': moviesdetails})
 
 # Details of Genres
-def genresDetail(request, pk):
+def genresMoviesDetail(request, pk):
     genresdetails  = get_object_or_404(Genre, pk=pk)
     return render(request, 'website/genresDetails.html', {'newGenres':genresdetails})
 
