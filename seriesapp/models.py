@@ -38,4 +38,18 @@ class Series(models.Model):
         return title 
 
 
+# Episodes 
+class Episodes(models.Model):
+    series = models.ForeignKey(Series)
+    title = models.CharField(max_length=200)
+    publishedDate = models.IntegerField(
+        blank=True, null=True
+    )
+    episodesImages = models.FileField(upload_to='Series/SeriesImage/', blank=False, null=True)
+    episodesVideo = models.FileField(upload_to='Series/SerieVideo/', blank=False, null=True)
+
+    def __unicode__(self):
+        title = str(self.title)
+        return title 
+
 

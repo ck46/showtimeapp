@@ -1,0 +1,231 @@
+{
+    "mst-api" : "1.0",
+    "info" : {
+        "description" : "MyShowTime api for movie broadcast",
+        "version" : "1.0.0",
+        "title" : "MyShowTime Movie broadcast",
+        "contact" : {
+            "email" : "info@myshowtime.co"
+        },
+        "license" : {
+            "name" : "copyright MyShowTime.co all rights reserved",
+        }
+    },
+    "host" : "myshowtime.co",
+    "basePath" : "/api",
+    "tags" : [ {
+        "name" : "enquiry",
+        "description" : "calls to be made when requesting for information."
+    }, {
+        "name" : "broadcast",
+        "description" : "content broadcast operations."
+    }, {
+        "name" : "authenticate",
+        "description" : "Authentication to get token."
+    } ],
+    "schemes" : [ "https" ],
+    "paths" : {
+        "/api/authenticate": {
+            "post": {
+                "tags": [ "authenticate" ],
+                "summary": "Authentication to get api token for using the api.",
+                "operationID": "authorize",
+                "consumes" : [ "application/json" ],
+                "produces" : [ "application/json" ],
+                "parameters" : [ {
+                    "in" : "body",
+                    "name" : "authorization",
+                    "description" : "Authorize to get api token",
+                    "required" : true,
+                    "schema" : {
+                        "$ref" : "#/definitions/authorize"
+                    }
+                }]
+            }
+        },
+        "/user/userid" : {
+            "get" : {
+                "tags" : [ "enquiry" ],
+                "summary" : "Detail about a user based on their userid. Allows validation prior to broadcast.",
+                "description" : "Returns user detail based on userid.\n",
+                "operationId" : "getUser",
+                "produces" : [ "application/json" ],
+                "parameters" : [ {
+                    "name" : "userid",
+                    "in" : "path",
+                    "description" : "User ID",
+                    "required" : true,
+                    "type" : "string"
+                } ],
+                "responses" : {
+                    "200" : {
+                        "description" : "Successful operation",
+                        "schema" : {
+                            "$ref" : "#/definitions/user"
+                        }
+                    },
+                    "400" : {
+                        "description" : "userid not active or valid"
+                    }
+                }
+            }
+        },
+        "/content" : {
+            "get" : {
+                "tags" : [ "enquiry" ],
+                "summary" : "Returns a list of the current MyShowTime content.",
+                "description" : "Returns a list of available content.\n",
+                "operationId" : "getContent",
+                "produces" : [ "application/json" ],
+                "parameters" : [ ],
+                "responses" : {
+                    "200" : {
+                        "description" : "search results matching criteria",
+                        "schema" : {
+                            "type" : "array",
+                            "items" : {
+                                "$ref" : "#/definitions/MyShowTimeContent"
+                            }
+                        }
+                    },
+                    "400" : {
+                        "description" : "bad input parameter"
+                    }
+                }
+            }
+        },
+        "/broadcast" : {
+            "post" : {
+                "tags" : [ "broadcast" ],
+                "summary" : "broadcast content upon user request",
+                "description" : "Adds a content item to the system queue",
+                "operationId" : "broadcastContent",
+                "consumes" : [ "application/json" ],
+                "produces" : [ "application/json" ],
+                "parameters" : [ {
+                    "in" : "body",
+                    "name" : "broadcastContent",
+                    "description" : "Broadcast content",
+                    "required" : false,
+                    "schema" : {
+                        "$ref" : "#/definitions/BroadcastContent"
+                    }
+                } ],
+                "responses" : {
+                    "201" : {
+                        "description" : "content added to queue"
+                    },
+                    "209" : {
+                        "description" : "an existing broadcast already exists"
+                    },
+                    "400" : {
+                        "description" : "invalid input, object invalid"
+                    },
+                    "412" : {
+                        "description" : "invalid user"
+                    },
+                    "417" : {
+                        "description" : "invalid content"
+                    }
+                }
+            }
+        }
+    },
+    "definitions" : {
+        "authorize": {
+            "type": "object",
+            "required": ["username", "password"],
+            "properties": {
+                "username": {
+                    "type": "string",
+                    "example": "john_doe"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "pa55woRd"
+                }
+            }
+        },
+        "user" : {
+            "type" : "object",
+            "required" : [ "isActive", "userid" ],
+            "properties" : {
+                "userid" : {
+                    "type" : "string",
+                    "example" : "0012"
+                },
+                "isActive" : {
+                    "type" : "boolean",
+                    "example" : true
+                },
+                "userName" : {
+                    "type" : "string",
+                    "example" : "John Doe"
+                },
+                "userEmail" : {
+                    "type" : "string",
+                    "example" : "john@doe.com"
+                }
+            },
+            "example" : {
+                "userEmail" : "john@doe.com",
+                "userName" : "John Doe",
+                "userid" : "0012",
+                "isActive" : true
+            }
+        },
+        "BroadcastContent" : {
+            "type" : "object",
+            "required" : [ "content_id", "content_url" ],
+            "properties" : {
+                "content_id" : {
+                    "type" : "string",
+                    "example" : "0012"
+                },
+                "content_description" : {
+                    "type" : "string",
+                    "example" : "A story of John Doe"
+                },
+                "content_url" : {
+                    "type" : "string",
+                    "example" : "url"
+                }
+            },
+            "example" : {
+                "content_id": "0012",
+                "content_description": "A story of John Doe",
+                "content_url": "url"
+            }
+        },
+        "BroadcastRequest" : {
+            "required" : [ "userid", "content_id", "content_url", "broadcast_ref" ],
+            "properties" : {
+                "broadcast_ref" : {
+                    "type" : "string",
+                    "format" : "uuid",
+                    "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851",
+                    "description" : "A broadcast identifier to be supplied by web app. Needs to be unique for each broadcast."
+                },
+                "userid" : {
+                    "type" : "string",
+                    "example" : "001",
+                    "description" : "The unique id of the user."
+                },
+                "content_id" : {
+                    "type" : "string",
+                    "example" : "10012"
+                },
+                "content_url" : {
+                    "type" : "string",
+                    "example" : "url"
+                }
+            },
+            "example" : {
+                "userid": "001",
+                "content_id": "10012",
+                "content_url": "url",
+                "broadcast_ref" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+            }
+        }
+    }
+}
