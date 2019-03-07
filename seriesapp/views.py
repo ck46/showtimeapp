@@ -11,7 +11,9 @@ from django.utils import timezone
 import time
 
 
+
 # Dashboard Product
+@login_required
 def dashboardPage(request):
     series= Series.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
@@ -19,11 +21,13 @@ def dashboardPage(request):
 
 
 #  Series List
+@login_required
 def seriesList(request):
     serieslist = Series.objects.all().order_by('publishedDate')
     return render(request, 'website/seriesList.html', {'newSeries' : serieslist})
 
 #  Genre Product List
+@login_required
 def genresList(request):
     genreslists = Genre.objects.all().order_by('publishedDate')
     return render(request, 'website/genreList.html', {'newGenres' : genreslists})
@@ -31,11 +35,13 @@ def genresList(request):
 
 
 # Details of Series
+@login_required
 def seriesDetail(request, pk):
     seriesdetails  = get_object_or_404(Series, pk=pk)
     return render(request, 'website/seriesDetails.html', {'newSeries': seriesdetails})
 
 # Details of Genres
+@login_required
 def genresDetail(request, pk):
     genresdetails  = get_object_or_404(Genre, pk=pk)
     return render(request, 'website/genresDetails.html', {'newGenres':genresdetails})
@@ -43,6 +49,7 @@ def genresDetail(request, pk):
 
 
 # New Store Product
+@login_required
 @login_required
 def newSeries(request):
     if request.method == "POST":

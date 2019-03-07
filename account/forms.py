@@ -5,11 +5,13 @@ from .models import CustomUser
 
 
 class SignUpForm(UserCreationForm):
-	email = forms.CharField(max_length=254, required=True, widget=forms.EmailInput())
+	# email = forms.CharField(max_length=254, required=True, widget=forms.EmailInput())
 
 	class Meta:
 		model = CustomUser
 		fields = ('username', 'first_name', 'last_name','profileImages', 'iucnumber' , 'decodertype',  'phonenumber', 'email', 'password1', 'password2')
+
+# profileImages
 
 
 # class SignUpForm(UserCreationForm):

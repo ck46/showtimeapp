@@ -1,12 +1,21 @@
 {% extends 'baseaccount.html' %} 
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
 
 
-<form id="msform" method="post" novalidate>
-    {% csrf_token %} {% include 'includes/signupform.html' %}
+<form  method="POST" novalidate enctype="multipart/form-data">
+    <div >
+        {% csrf_token %}
+        {% comment %} {{ form|crispy }} {% endcomment %}
+        {% include 'includes/signupform.html' %}
+          
+    
+    {% comment %} <button type="submit" class="btn btn-danger">Submit</button> {% endcomment %}
+     </div> 
+    
+   
    
 </form>
 

@@ -1,0 +1,89 @@
+{% extends 'basehome.html' %}
+
+{% load static %}
+
+{% load staticfiles %}
+
+{% block content  %}
+
+<!-- <div class="bg-image" >
+    <img src="{% static 'img/banner.jpg' %}" width="100%";>
+ </div> -->
+
+
+
+  <div class="container">
+    <div style="padding-left:20%; padding-top:30px;">
+      <div class="row" >
+          <div  class="col-md-8">
+         
+              <div class="card card-default">
+                  <div class=" card-header" style="background-color:red; text-align:center;">Pay Pal Details</div>
+                  <div class="card-body card-6-6">
+                    <h5 class="text-center">Hi {{user}} Welcome to Xtreme Platform to finish the process click on Subscribe Button</h5>
+                      <div style="text-align:center;">
+                           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="YZDZRS6PK8KF6">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                <br>
+                                <button type="submit" class="btn btn-danger">Subscribe</button>
+                                <br>
+                                <br>
+                        </form>
+                  </div>
+
+                  <div class="card-footer text-muted text-center">
+                    Xtreme copyright 2019
+                  </div>
+          
+                  
+                          
+                      </div>
+          
+                
+                  
+                  
+                </div>
+          </div>
+      </div>
+      
+      
+        </div>
+
+    </div>
+  
+{% endblock %}
+
+
+<!-- <div class="row"> -->
+
+        <div  id="msform">
+        <div class="col-md-6 col-md-offset-3">
+         
+               
+                     
+                        
+                        
+                        <!-- fieldsets -->
+                        <fieldset>
+                            <h2 class="fs-title">Pay Pal Details</h2>
+                             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="YZDZRS6PK8KF6">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                <br>
+                                <button type="submit" class="btn btn-danger">Subscribe</button>
+                            </form>
+                           
+                           
+                            <button type="button" name="next" class="next action-button" value="Next" >Next</button>
+                        </fieldset>
+                       
+                        
+                      
+                    
+        </div>
+    </div>

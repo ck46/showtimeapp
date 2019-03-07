@@ -10,4 +10,5 @@ urlpatterns = [
     # Home Page
     url(r'^$', views.Home, name='Home'),
 
-]
+   
+] 

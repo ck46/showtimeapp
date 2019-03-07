@@ -8,6 +8,7 @@ from .views import *
 
 urlpatterns = [
     # Movie
+    url(r'^HomePayPal/$', views.HomePayPal, name='HomePayPal'),
     url(r'^$', views.dashboardMoviePage, name='dashboardMoviePage'),
     url(r'^List/$', views.moviesList, name='moviesList'),
     url(r'^movie/(?P<pk>\d+)/$', views.moviesDetail, name='moviesDetail'),

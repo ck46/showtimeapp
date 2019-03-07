@@ -10,7 +10,12 @@ from django.utils import timezone
 import time
 
 
+@login_required
+def HomePayPal(request):
+    return render(request, 'website/paypalpayment.html', {})
+
 # Dashboard Product
+@login_required
 def dashboardMoviePage(request):
     movies= Movie.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
@@ -18,21 +23,25 @@ def dashboardMoviePage(request):
 
 
 #  Movie List
+@login_required
 def moviesList(request):
     movieslist = Movie.objects.all().order_by('publishedDate')
     return render(request, 'website/moviesList.html', {'newMovies' : movieslist})
 
 #  Genre Product List
+@login_required
 def genresMoviesList(request):
     genreslists = Genre.objects.all().order_by('publishedDate')
     return render(request, 'website/genreList.html', {'newGenres' : genreslists})
 
 # Details of Series
+@login_required
 def moviesDetail(request, pk):
     moviesdetails  = get_object_or_404(Movie, pk=pk)
     return render(request, 'website/moviesDetails.html', {'newMovies': moviesdetails})
 
 # Details of Genres
+@login_required
 def genresMoviesDetail(request, pk):
     genresdetails  = get_object_or_404(Genre, pk=pk)
     return render(request, 'website/genresDetails.html', {'newGenres':genresdetails})

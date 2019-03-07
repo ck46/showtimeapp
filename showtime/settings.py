@@ -25,7 +25,7 @@ SECRET_KEY = '-3(qemr2%@e9p8pjk^sc5t3guns2gisb7tc#$d^t!n8hy38oj4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['xtremezm.com', '159.89.236.252:']
 
 
 # Application definition

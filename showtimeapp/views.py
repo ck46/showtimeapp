@@ -9,3 +9,5 @@ from django.shortcuts import render
 # Home Page
 def Home(request):
     return render(request, 'website/index.html', {})
+
+
