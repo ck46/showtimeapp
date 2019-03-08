@@ -19,7 +19,7 @@ def HomePayPal(request):
 def dashboardMoviePage(request):
     movies= Movie.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
-    return render(request, 'website/dashboardMoviesPage.html', {'newMovies' : movies, 'newGenres' : genres})
+    return render(request, 'website/dashboardMoviePage.html', {'newMovies' : movies, 'newGenres' : genres})
 
 
 #  Movie List
@@ -38,7 +38,7 @@ def genresMoviesList(request):
 @login_required
 def moviesDetail(request, pk):
     moviesdetails  = get_object_or_404(Movie, pk=pk)
-    return render(request, 'website/moviesDetails.html', {'newMovies': moviesdetails})
+    return render(request, 'website/movieDetails.html', {'newMovies': moviesdetails})
 
 # Details of Genres
 @login_required

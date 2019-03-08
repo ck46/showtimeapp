@@ -17,7 +17,7 @@ import time
 def dashboardPage(request):
     series= Series.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
-    return render(request, 'website/dashboardPage.html', {'newSeries' : series, 'newGenres' : genres})
+    return render(request, 'website/dashboardPages.html', {'newSeries' : series, 'newGenres' : genres})
 
 
 #  Series List
@@ -38,7 +38,7 @@ def genresList(request):
 @login_required
 def seriesDetail(request, pk):
     seriesdetails  = get_object_or_404(Series, pk=pk)
-    return render(request, 'website/seriesDetails.html', {'newSeries': seriesdetails})
+    return render(request, 'website/serieDetails.html', {'newSeries': seriesdetails})
 
 # Details of Genres
 @login_required

@@ -1,0 +1,35 @@
+{% extends 'bas.html' %}
+
+{% load static %}
+
+{% load staticfiles %}
+
+{% block content  %}
+
+
+
+ <div class="row">
+                  <hr>
+                  
+                   {% for newMoviess in newMovies %}
+                   <div class="col-sm-3 auto">
+                      <div style="" >
+                        <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;">
+                        <br>
+                        <a href="{% url 'moviesDetail' pk=newMoviess.pk %}" style="color:#fff; font-size: 12px;">
+                            {{ newMoviess.title }} 
+                        </a>            
+                        <br>             
+                        <a class="card-text" style="color: grey; font-size: 12px;">{{ newMoviess.genre }}</a> 
+                        <p class="card-text" style="color: grey; font-size: 12px;" >{{ newMoviess.publishedDate }}</p> 
+                        <!-- <a class="btn btn-danger">Watch Trailer</a>
+                        <a class="btn btn-danger">Decoder</a> -->
+                      </div>
+                      <br>
+                    </div>  
+                    {% endfor %}
+                   
+</div>
+
+
+{% endblock  %}
