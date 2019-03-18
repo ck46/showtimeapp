@@ -8,11 +8,13 @@
 
 
 
+<div class="col-sm-12">
+<hr style="border: 1px dashed white;" >
  <div class="row">
                   <hr>
                   
                    {% for newMoviess in newMovies %}
-                   <div class="col-xs-4 auto">
+                   <div class="col-sm-3 auto">
                       <div style="" >
                         <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;">
                         <br>
@@ -28,7 +30,7 @@
                       <br>
                     </div>  
                     {% endfor %}
-                   
+       </div>            
 </div>
 
 

@@ -24,22 +24,22 @@
 
 <body>
 
-  <div class="d-flex" id="wrapper">
+  {% comment %} <div class="d-flex" id="wrapper"> {% endcomment %}
 
     <!-- Sidebar -->
-    <div class="border-right" id="sidebar-wrapper">
+    {% comment %} <div class="border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">XTREME</div>
-      <div class="navs list-group list-group-flush bg-light" >
+      <div class="navs list-group list-group-flush bg-light" > {% endcomment %}
         {% comment %} <a href="#" class="list-group-item list-group-item-action ">NEW MOVIE | TV SHOWS</a>
         <a href="{% url 'dashboardMoviePage' %}" class="list-group-item list-group-item-action">MOVIE</a>
         <a href="{% url 'dashboardPage' %}" class="list-group-item list-group-item-action">TV SHOWS</a> {% endcomment %}
-        {% for newMovieGenress in newMovieGenres %}
+        {% comment %} {% for newMovieGenress in newMovieGenres %}
          <a href="#" class="list-group-item list-group-item-action">{{ newMovieGenress.title }}</a>
         {% endfor %}
 
          {% for newGenress in newGenres %}
          
-        {% endfor %}
+        {% endfor %} {% endcomment %}
     
         {% comment %} <a href="#" class="list-group-item list-group-item-action">ACTION</a>
         <a href="#" class="list-group-item list-group-item-action">DRAMA</a>
@@ -47,9 +47,9 @@
         <a href="#" class="list-group-item list-group-item-action">HORROR</a>
         <a href="#" class="list-group-item list-group-item-action">ANIMATION</a>
         <a href="#" class="list-group-item list-group-item-action">CLASSIC</a> {% endcomment %}
-      </div>
+      {% comment %} </div> {% endcomment %}
 
-       
+{% comment %}        
       <div style="padding-top:50px;">
       <hr style="border: 1px dashed white;" >
       </div>
@@ -63,14 +63,17 @@
        
       </div>
 
-    </div>
+    </div> {% endcomment %}
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-nav border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Side Menu</button>
+      <div class>
+      XTREME
+      </div>
+        {% comment %} <button class="btn btn-primary" id="menu-toggle">Side Menu</button> {% endcomment %}
 
         <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -143,10 +146,13 @@
                    
                 </div>
         
-         <hr style="border: 1px dashed white;" >
+        
         
         {% comment %} Content  {% endcomment %}
         {% block content %} 
+         
+        <div class="container">
+        </div>
         {% endblock %}
 
       </div>

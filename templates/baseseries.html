@@ -27,15 +27,15 @@
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">XTREME</div>
-      <div class="navs list-group list-group-flush bg-light" >
+    {% comment %} <div class="border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">XTREME</div> {% endcomment %}
+      {% comment %} <div class="navs list-group list-group-flush bg-light" > {% endcomment %}
         {% comment %} <a href="#" class="list-group-item list-group-item-action ">NEW MOVIE | TV SHOWS</a>
         <a href="{% url 'dashboardMoviePage' %}" class="list-group-item list-group-item-action">MOVIE</a>
         <a href="{% url 'dashboardPage' %}" class="list-group-item list-group-item-action">TV SHOWS</a> {% endcomment %}
-        {% for newGenress in newGenres %}
+        {% comment %} {% for newGenress in newGenres %}
          <a href="#" class="list-group-item list-group-item-action">{{ newGenress.title }}</a>
-        {% endfor %}
+        {% endfor %} {% endcomment %}
     
         {% comment %} <a href="#" class="list-group-item list-group-item-action">ACTION</a>
         <a href="#" class="list-group-item list-group-item-action">DRAMA</a>
@@ -43,14 +43,14 @@
         <a href="#" class="list-group-item list-group-item-action">HORROR</a>
         <a href="#" class="list-group-item list-group-item-action">ANIMATION</a>
         <a href="#" class="list-group-item list-group-item-action">CLASSIC</a> {% endcomment %}
-      </div>
+      {% comment %} </div> {% endcomment %}
 
        
-      <div style="padding-top:50px;">
+      {% comment %} <div style="padding-top:50px;">
       <hr style="border: 1px dashed white;" >
-      </div>
+      </div> {% endcomment %}
 
-      <div class="list-group list-group-flush">
+      {% comment %} <div class="list-group list-group-flush">
         
         <a href="#" class="list-group-item list-group-item-action ">MOST VIEWED</a>
         <a href="#" class="list-group-item list-group-item-action ">ARTIST OF THE MONTH</a>
@@ -59,14 +59,15 @@
        
       </div>
 
-    </div>
+    </div> {% endcomment %}
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-nav border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Side Menu</button>
+      XTREME
+        {% comment %} <button class="btn btn-primary" id="menu-toggle">Side Menu</button> {% endcomment %}
 
         <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -90,6 +91,8 @@
              <span class="navLink" >Series</span> 
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'dashboardPage' %}">Series</a>
+               <div class="dropdown-divider"></div>
                 {% for newGenress in newGenres%}
                 <a class="dropdown-item" href="#">{{newGenress.title}}</a>
                 <div class="dropdown-divider"></div>
@@ -135,8 +138,7 @@
                    
                 </div>
         
-         <hr style="border: 1px dashed white;" >
-        
+       
         {% comment %} Content  {% endcomment %}
         {% block content %} 
         {% endblock %}
