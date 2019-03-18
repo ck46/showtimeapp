@@ -489,15 +489,12 @@
                 <button class="btn btn-primary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">{{newSeries.title}}
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                  <li syle="padding-top: 20px; padding-bottom:20px;" role="presentation"><a role="menuitem" tabindex="-1" href="#">Episode 1</a></li>
+                {% if newSeries.title %}
+                  <li syle="padding-top: 20px; padding-bottom:20px;" role="presentation"><a role="menuitem" tabindex="-1" href="#">{{newSeries.episodes}}</a></li>
                   <br>
-                  <li syle="padding-top: 20px; padding-bottom:20px;"  role="presentation"><a role="menuitem" tabindex="-1" href="#">Episode 1</a></li>
-                  <br>
-                  <li syle="padding-top: 20px; padding-bottom:20px;" role="presentation"><a role="menuitem" tabindex="-1" href="#">Episode 1</a></li>
-                  <br>
-                  <li syle="padding-top: 20px; padding-bottom:20px;" role="presentation" class="divider"></li>
-                  <br>
-                  <li syle="padding-top: 20px; padding-bottom:20px;" role="presentation"><a role="menuitem" tabindex="-1" href="#">AEpisode 1</a></li>
+                 
+                 
+                {% endif %}
                 </ul>
               </div>
               

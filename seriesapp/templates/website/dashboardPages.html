@@ -1,4 +1,4 @@
-{% extends 'bas.html' %}
+{% extends 'baseseries.html' %}
 
 {% load static %}
 
@@ -13,7 +13,7 @@
                    {% for newSeriess in newSeries %}
                 <div class="col-sm-3 auto">
                    <div style="" >
-                     <img src="{{ newSeriess.seriesImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;">
+                     <img src="{{ newSeriess.seriesImages.url }}" alt="Series" alt="Series" class="testImage responsive" style="width:230px; height:300px;">
                      <br>
                      <a href="{% url 'seriesDetail' pk=newSeriess.pk %}" style="color:#fff; font-size: 12px;">
                          {{ newSeriess.title }} 

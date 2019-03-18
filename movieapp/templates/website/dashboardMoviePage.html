@@ -1,4 +1,4 @@
-{% extends 'bas.html' %}
+{% extends 'basemovies.html' %}
 
 {% load static %}
 
@@ -12,7 +12,7 @@
                   <hr>
                   
                    {% for newMoviess in newMovies %}
-                   <div class="col-sm-3 auto">
+                   <div class="col-xs-4 auto">
                       <div style="" >
                         <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;">
                         <br>

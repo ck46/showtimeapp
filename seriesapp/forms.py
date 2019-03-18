@@ -11,11 +11,18 @@ class GenreForm(forms.ModelForm):
         model = Genre
         fields = [ 'title', 'publishedDate', 'genreImages']
 
+
+class EpisodesForm(forms.ModelForm):
+    
+    class Meta:
+        model = Episodes
+        fields = ['genres'  ,'title', 'description', 'publishedDate']
+
 class SeriesForm(forms.ModelForm):
 
     class Meta:
         model = Series
-        fields = ['title', 'description', 'genres', 'publishedDate', 'seriesImages', 'seriesVideo']
+        fields = ['genres', 'title', 'description', 'genres', 'publishedDate', 'seriesImages','episodes']
         
 
 

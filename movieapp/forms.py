@@ -4,6 +4,13 @@ from django.contrib.auth.models import User
 from .models import *
 
 
+class GenresForm(forms.ModelForm):
+    
+    class Meta:
+        model = Genre
+        fields = ['title', 'publishedDate', 'genreImages']
+
+
 class DirectorForm(forms.ModelForm):
     
     class Meta:
@@ -26,10 +33,6 @@ class MoviesForm(forms.ModelForm):
         
 
 
-class GenresForm(forms.ModelForm):
 
-    class Meta:
-        model = Genre
-        fields = ['title', 'publishedDate', 'genreImages']
 
 

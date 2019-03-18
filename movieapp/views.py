@@ -19,7 +19,7 @@ def HomePayPal(request):
 def dashboardMoviePage(request):
     movies= Movie.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
-    return render(request, 'website/dashboardMoviePage.html', {'newMovies' : movies, 'newGenres' : genres})
+    return render(request, 'website/dashboardMoviePage.html', {'newMovies' : movies, 'newMovieGenres' : genres})
 
 
 #  Movie List
@@ -32,7 +32,7 @@ def moviesList(request):
 @login_required
 def genresMoviesList(request):
     genreslists = Genre.objects.all().order_by('publishedDate')
-    return render(request, 'website/genreList.html', {'newGenres' : genreslists})
+    return render(request, 'website/genreList.html', {'newMovieGenres' : genreslists})
 
 # Details of Series
 @login_required
@@ -44,7 +44,7 @@ def moviesDetail(request, pk):
 @login_required
 def genresMoviesDetail(request, pk):
     genresdetails  = get_object_or_404(Genre, pk=pk)
-    return render(request, 'website/genresDetails.html', {'newGenres':genresdetails})
+    return render(request, 'website/genresDetails.html', {'newMovieGenres':genresdetails})
 
 
 
@@ -95,42 +95,42 @@ def moviesRemove(request, pk):
 
 # New Genres
 @login_required
-def newGenres(request):
+def newMovieGenres(request):
     if request.method == "POST":
         form = GenresForm(request.POST, request.FILES)
         if form.is_valid():
-            newGenres = form.save()
-            newGenres.user = request.user
-            newGenres.publishedDate = timezone.now()
-            newGenres.save()
+            newMovieGenres = form.save()
+            newMovieGenres.user = request.user
+            newMovieGenres.publishedDate = timezone.now()
+            newMovieGenres.save()
             # return redirect('dashboard',)
-            return redirect('genresDetail', pk=newGenres.pk)
+            return redirect('genresDetail', pk=newMovieGenres.pk)
     else:
         form = GenresForm()
         # form = PostForm(request.POST, instance=new_post)
-    return render(request, 'website/newGenres.html', {'form' : form})
+    return render(request, 'website/newMovieGenres.html', {'form' : form})
 
 
 # Edit old Store
 @login_required
 def genresEdit(request, pk):
-    newGenres = get_object_or_404(Genre, pk=pk)
+    newMovieGenres = get_object_or_404(Genre, pk=pk)
     if request.method == "POST" :
         form = displayProductForm(request.POST,request.FILES, instance=newStore)
         if form.is_valid():
-            newGenres = form.save()
-            newGenres.user = request.user
-            newGenres.publishedDate = timezone.now()
-            newGenres.save()
-            return redirect('genresDetail', pk=newGenres.pk)
+            newMovieGenres = form.save()
+            newMovieGenres.user = request.user
+            newMovieGenres.publishedDate = timezone.now()
+            newMovieGenres.save()
+            return redirect('genresDetail', pk=newMovieGenres.pk)
     else:
-        form = GenresForm(instance=newGenres)
+        form = GenresForm(instance=newMovieGenres)
     return render(request, 'website/genresEdit.html', {'form': form})
 
 
 # Delete Store
 @login_required
 def genresRemove(request, pk):
-    newGenres = get_object_or_404(newGenres, pk=pk)
-    newGenres.delete()
+    newMovieGenres = get_object_or_404(newMovieGenres, pk=pk)
+    newMovieGenres.delete()
     return redirect('genresList')
