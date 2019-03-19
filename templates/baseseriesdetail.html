@@ -24,55 +24,14 @@
 
 <body>
 
-  {% comment %} <div class="d-flex" id="wrapper"> {% endcomment %}
+  <div class="d-flex" id="wrapper">
 
-    <!-- Sidebar -->
-    {% comment %} <div class="border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">XTREME</div>
-      <div class="navs list-group list-group-flush bg-light" > {% endcomment %}
-        {% comment %} <a href="#" class="list-group-item list-group-item-action ">NEW MOVIE | TV SHOWS</a>
-        <a href="{% url 'dashboardMoviePage' %}" class="list-group-item list-group-item-action">MOVIE</a>
-        <a href="{% url 'dashboardPage' %}" class="list-group-item list-group-item-action">TV SHOWS</a> {% endcomment %}
-        {% comment %} {% for newMovieGenress in newMovieGenres %}
-         <a href="#" class="list-group-item list-group-item-action">{{ newMovieGenress.title }}</a>
-        {% endfor %}
-
-         {% for newGenress in newGenres %}
-         
-        {% endfor %} {% endcomment %}
-    
-        {% comment %} <a href="#" class="list-group-item list-group-item-action">ACTION</a>
-        <a href="#" class="list-group-item list-group-item-action">DRAMA</a>
-        <a href="#" class="list-group-item list-group-item-action">COMEDY</a>
-        <a href="#" class="list-group-item list-group-item-action">HORROR</a>
-        <a href="#" class="list-group-item list-group-item-action">ANIMATION</a>
-        <a href="#" class="list-group-item list-group-item-action">CLASSIC</a> {% endcomment %}
-      {% comment %} </div> {% endcomment %}
-
-{% comment %}        
-      <div style="padding-top:50px;">
-      <hr style="border: 1px dashed white;" >
-      </div>
-
-      <div class="list-group list-group-flush">
-        
-        <a href="#" class="list-group-item list-group-item-action ">MOST VIEWED</a>
-        <a href="#" class="list-group-item list-group-item-action ">ARTIST OF THE MONTH</a>
-        <a href="#" class="list-group-item list-group-item-action ">GENRE OF THE MOVIE</a>
-        <a href="{% url 'my_account' %}" class="list-group-item list-group-item-action ">ACCOUNTS</a>
-       
-      </div>
-
-    </div> {% endcomment %}
-    <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-nav border-bottom">
-      <div class>
       XTREME
-      </div>
         {% comment %} <button class="btn btn-primary" id="menu-toggle">Side Menu</button> {% endcomment %}
 
         <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,28 +44,14 @@
               <a   class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <span class="navLink" >Movies</span> 
               </a>
+
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                {% for newMovieGenress in newMovieGenres %}
-
-                <a class="dropdown-item" href="#">{{ newMovieGenress.title }}</a>
+                <a class="dropdown-item" href="{% url 'dashboardMoviePage' %}">Movies</a>
                 <div class="dropdown-divider"></div>
-
-                {% endfor  %}
-
               </div>
+
             </li>
-           <li class="nav-item dropdown">
-              <a   class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <span class="navLink" >Series</span> 
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                
-                <a class="dropdown-item" href="{% url 'dashboardPage' %}">Series</a>
-                <div class="dropdown-divider"></div>
-               
-              </div>
-            </li>
+           
             <li  class="nav-item  active"   >
               <a  class="nav-link"  href="#"><span class="navLink" >{{user}}</span><span class="sr-only">(current)</span></a>
             </li>
@@ -134,15 +79,21 @@
       </div>
         <!-- Dropdown - Messages -->
         
+        <div class="text-right">
+                    <form action="#">
+                     <input type="text" class="form-control" id="usr" placeholder="Search.."  style="background-color:#1c0238; color:#fff; width:40%; float:right;">
+                      {% comment %} <input type="text" placeholder="Search.." name="search" style="background-color:#1c0238; color:#fff; .search-container {
+                        float: right;"> {% endcomment %}
+                       
+                    <button class="btn btn-primary" type="submit">Search</button>
+                   
+                    </form>
+                   
+                </div>
         
-        
-        
-        
+       
         {% comment %} Content  {% endcomment %}
         {% block content %} 
-         
-        <div class="container">
-        </div>
         {% endblock %}
 
       </div>
