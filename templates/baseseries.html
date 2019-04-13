@@ -127,14 +127,24 @@
         <!-- Dropdown - Messages -->
         
         <div class="text-right">
-                    <form action="#">
-                     <input type="text" class="form-control" id="usr" placeholder="Search.."  style="background-color:#1c0238; color:#fff; width:40%; float:right;">
+                    {% comment %} <form action="#"> {% endcomment %}
+                     {% comment %} <input type="text" class="form-control" id="usr" placeholder="Search.."  style="background-color:#1c0238; color:#fff; width:40%; float:right;"> {% endcomment %}
                       {% comment %} <input type="text" placeholder="Search.." name="search" style="background-color:#1c0238; color:#fff; .search-container {
                         float: right;"> {% endcomment %}
                        
-                    <button class="btn btn-primary" type="submit">Search</button>
+                    {% comment %} <button class="btn btn-primary" type="submit">Search</button> {% endcomment %}
                    
-                    </form>
+                    {% comment %} </form> {% endcomment %}
+
+    <form method="get">
+    <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.stock_id.label_tag }}
+          {% render_field filter.form.title class="form-control" %}
+          
+    </div>
+  <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+
                    
                 </div>
         

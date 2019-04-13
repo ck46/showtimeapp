@@ -8,10 +8,14 @@
 
 
 <div class="col-sm-12">
+
+
+ 
 <hr style="border: 1px dashed white;" >
  <div class="row">
                
-                   {% for newSeriess in newSeries %}
+                   {% comment %} {% for newSeriess in newSeries %} {% endcomment %}
+                   {% for newSeriess in filter.qs %}
                 <div class="col-sm-3 auto">
                    <div style="" >
                      <img src="{{ newSeriess.seriesImages.url }}" alt="Series" alt="Series" class="testImage responsive" style="width:230px; height:300px;">
@@ -33,3 +37,4 @@
 </div>
 
 {% endblock  %}
+

@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 from .models import *
 from .forms import *
+from .filters import *
 from django.utils import timezone
 import time
 
@@ -19,7 +20,8 @@ def HomePayPal(request):
 def dashboardMoviePage(request):
     movies= Movie.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
-    return render(request, 'website/dashboardMoviePage.html', {'newMovies' : movies, 'newMovieGenres' : genres})
+    series_filter = GenresFilters(request.GET, queryset=series)
+    return render(request, 'website/dashboardMoviePage.html', {'newMovies' : movies, 'newMovieGenres' : genres, 'filter': series_filter})
 
 
 #  Movie List

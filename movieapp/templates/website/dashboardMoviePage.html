@@ -23,7 +23,8 @@
  <div class="row">
                   <hr>
                   
-                   {% for newMoviess in newMovies %}
+                   {% comment %} {% for newMoviess in newMovies %} {% endcomment %}
+                   {% for newMoviess in filter.qs %}
                    <div class="col-sm-3 auto">
                       <div style="" >
                         <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;">
