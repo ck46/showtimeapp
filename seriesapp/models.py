@@ -110,7 +110,6 @@ class Series(models.Model):
     seasons = models.ForeignKey(Seasons)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     title = models.CharField(max_length=200)
-    genres = models.ForeignKey(Genre)
     description = models.TextField(null=True, blank=True)
     active = models.BooleanField(default=True)
     publishedDate = models.IntegerField(

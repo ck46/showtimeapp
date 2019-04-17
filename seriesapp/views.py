@@ -19,8 +19,8 @@ import time
 def dashboardPage(request):
     series= Series.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
-    series_filter = GenresFilters(request.GET, queryset=series)
-    return render(request, 'website/dashboardPages.html', {'newSeries' : series, 'newGenres' : genres, 'filter': series_filter})
+    series_filter = SeriesFilters(request.GET, queryset=series)
+    return render(request, 'website/dashboardPages.html', {'newGenres' : genres, 'filter': series_filter})
 
 
 #  Series List
