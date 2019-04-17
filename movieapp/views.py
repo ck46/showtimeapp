@@ -20,8 +20,8 @@ def HomePayPal(request):
 def dashboardMoviePage(request):
     movies= Movie.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
-    series_filter = GenresFilters(request.GET, queryset=series)
-    return render(request, 'website/dashboardMoviePage.html', {'newMovies' : movies, 'newMovieGenres' : genres, 'filter': series_filter})
+    movies_filter = MoviesFilters(request.GET, queryset=movies)
+    return render(request, 'website/dashboardMoviePage.html', {'newMovies' : movies, 'newMovieGenres' : genres, 'filter': movies_filter})
 
 
 #  Movie List
