@@ -21,7 +21,7 @@ def dashboardMoviePage(request):
     movies= Movie.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
     movies_filter = MoviesFilters(request.GET, queryset=movies)
-    return render(request, 'website/dashboardMoviePage.html', {'newMovies' : movies, 'newMovieGenres' : genres, 'filter': movies_filter})
+    return render(request, 'website/dashboardMoviePage.html', {'newMovieGenres' : genres, 'filter': movies_filter})
 
 
 #  Movie List
