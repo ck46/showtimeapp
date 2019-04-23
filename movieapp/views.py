@@ -8,6 +8,7 @@ from .models import *
 from .forms import *
 from .filters import *
 from django.utils import timezone
+from django.db.models import Q
 import time
 
 
@@ -20,8 +21,16 @@ def HomePayPal(request):
 def dashboardMoviePage(request):
     movies= Movie.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
-    movies_filter = MoviesFilters(request.GET, queryset=movies)
-    return render(request, 'website/dashboardMoviePage.html', {'newMovieGenres' : genres, 'filter': movies_filter})
+    # movies_filter = MoviesFilters(request.GET, queryset=movies)
+    query = request.GET.get("searchs")
+    if query:
+        movies = movies.filter(
+            Q(title__icontains=query)|
+            Q(description__icontains=query)|
+            Q(publishedDate__icontains=query)|
+            Q(genre__title__icontains=query)
+        ).distinct()
+    return render(request, 'website/dashboardMoviePage.html', {'newMovieGenres' : genres, 'movies': movies})
 
 
 #  Movie List
