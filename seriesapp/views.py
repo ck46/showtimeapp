@@ -9,6 +9,7 @@ from .models import *
 from .forms import *
 from .filters import *
 from django.utils import timezone
+from django.db.models import Q
 import time
 
 
@@ -19,8 +20,16 @@ import time
 def dashboardPage(request):
     series= Series.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
-    series_filter = SeriesFilters(request.GET, queryset=series)
-    return render(request, 'website/dashboardPages.html', {'newGenres' : genres, 'filter': series_filter})
+    # series_filter = SeriesFilters(request.GET, queryset=series)
+    query = request.GET.get("searchs")
+    if query:
+        series = series.filter(
+            Q(title__icontains=query)|
+            Q(description__icontains=query)|
+            Q(publishedDate__icontains=query)|
+            Q(genres__title__icontains=query)
+        ).distinct()
+    return render(request, 'website/dashboardPages.html', {'newGenres' : genres, 'series': series})
 
 
 #  Series List
