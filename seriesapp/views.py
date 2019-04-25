@@ -31,7 +31,6 @@ def dashboardPage(request):
         ).distinct()
     return render(request, 'website/dashboardPages.html', {'newGenres' : genres, 'series': series})
 
-
 #  Series List
 @login_required
 def seriesList(request):

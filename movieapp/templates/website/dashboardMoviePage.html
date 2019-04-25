@@ -8,34 +8,32 @@
 
 {% comment %} <div class="text-right"> {% endcomment %}
 <div >
-                  <form method="get">
-              <div class="form-group col-sm-4 col-md-3">
-          {{ filter.form.title.label_tag }}
-          {% render_field filter.form.title class="form-control" %}
-          <button class="btn btn-primary" type="submit">Search</button>
-          
-    </div>
-  </form>
-
-   {% comment %} <form method="GET">
-        <!-- <input type="text" name="search" placeholder="Search Images"  /> -->
-        <input  type="text" name="searchs" placeholder=" Search...." value="{{request.GET.searchs}}" class="form-control"  id="search"  />
-        <!-- <input  class="btn btn-primary" type="submit" value="Search"  class="sub"/> -->
-        <button class="btn btn-primary" type="submit">Search</button>
-      </form> {% endcomment %}
-
-       <div class="form-group col-sm-4 col-md-3">
-          <form method="GET">
-          <input  type="text" name="search" placeholder=" Search...." value="{{request.GET.search}}" class="form-control"  id="search"  />
-          </form>
-        </div>
+      <form method="get">
+     <div class="row">
 
         <div class="form-group col-sm-4 col-md-3">
+          <form method="GET">
+            <input  type="text" name="search" placeholder=" Search...." value="{{request.GET.search}}" class="form-control"  id="search"  />
+          </form>
+        </div>
+        
+         <div class="form-group col-sm-4 col-md-3">
           
          <button type="submit" class="btn btn-primary">
             <span class="glyphicon glyphicon-search"></span> Search
         </button>
         </div>
+    </div>
+
+  
+
+
+
+    
+      <br>
+  </form>
+
+      
 
 
 
