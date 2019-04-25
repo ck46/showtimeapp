@@ -22,7 +22,7 @@ def dashboardMoviePage(request):
     movies= Movie.objects.all().order_by('publishedDate')
     genres = Genre.objects.all().order_by('publishedDate')
    
-    query = request.GET.get("search")
+    query = request.GET.get("searchs")
     if query:
         movies = movies.filter(
             Q(title__icontains=query)|
