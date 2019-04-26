@@ -8,78 +8,88 @@
 
 
 <div class= "container">
- <div >
-                 
-                  
-                 {% if newMovies.title %}
+    <div >
+        
+        
+        {% if newMovies.title %}
 
-                <div class ="row">
+        <div class ="row">
 
-                 <div class="col-md-4">
+            <div class="col-md-4">
                 <img class="card-img-top" src="{{ newMovies.movieImages.url }}" alt="Movies"  style="width:230px; height:300px;">
-              
-                  <br>
-                  <a class="card-title" style="color:#fff; font-size:12px;">{{newMovies.title}}</a>
-                  <br>
                 
-                  <a class="card-text" style="color: grey; font-size:12px;">{{newMovies.genre}}</a> 
-                  <!-- <a class="card-text" style="color: grey; font-size:12px;">{{newMovies.description}}</a>        -->
-                  <p class="card-text" style="color: grey; font-size:12px;">{{newMovies.publishedDate}}</p>
-                 </div>
+                <br>
+                <a class="card-title" style="color:#fff; font-size:12px;">{{newMovies.title}}</a>
+                <br>
+                
+                <a class="card-text" style="color: grey; font-size:12px;">{{newMovies.genre}}</a> 
+                <!-- <a class="card-text" style="color: grey; font-size:12px;">{{newMovies.description}}</a>        -->
+                <p class="card-text" style="color: grey; font-size:12px;">{{newMovies.publishedDate}}</p>
+            </div>
 
-                <div class="col-md-7">
-                    {% comment %} <div style="padding-left:30%;"> {% endcomment %}
+            <div class="col-md-7">
+                {% comment %} <div style="padding-left:30%;"> {% endcomment %}
                 
                 <p style="color:white;">Description</p>
                 <p style="color:white;  font-size:12px;">{{newMovies.description}}</p>
 
-               </div>
                 </div>
-                </div>
+            </div>
+        </div>
 
-            
+        
 
 
-               
+        
 
-               
-               <div class="row">
-               <div class="col-md-5">
-                 
-                  
-                 <br>
-    
+        
+        <div class="row">
+            <div class="col-md-5">
                 
-    
-                  <div >
-                      <h5 class="text-left" style="color:#fff;">Directed By
-                          <hr class="text-left" style="background-color:white;color:white; margin-left:-1px;width:25%;">
-                      </h5>
-                      
-                  
-                  <img src="{{ newMovies.movieImages.url }}" class="rounded-circle" width="80px;" height="80px;">
-                 
-                  
-                  </div>
-                  
-                  <div >
-                      <h5 class="text-left"style="color:#fff;">Cast
-                          <hr class="text-left" style="background-color:white;color:white; margin-left:-1px;width:25%;">
-                      </h5>
-                     
-                  <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
-                  <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
-                  <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
-                  <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
-                  <div style="padding-bottom:25px;"></div>
-                 
-                  
-                  </div>
-               </div>
+                
+                <br>
+                
+                
+                
+                <div >
+                    <h5 class="text-left" style="color:#fff;">Directed By
+                        <hr class="text-left" style="background-color:white;color:white; margin-left:-1px;width:25%;">
+                    </h5>
+                    
+                    
+                    <img src="{{ newMovies.movieImages.url }}" class="rounded-circle" width="80px;" height="80px;"><br/>
+                    {{ newMovies.directors.directorName }}
+                    
                 </div>
-            
-            {% endif %}
-</div>
+                
+                <div >
+                    <h5 class="text-left"style="color:#fff;">Cast
+                        <hr class="text-left" style="background-color:white;color:white; margin-left:-1px;width:25%;">
+                    </h5>
+                    
+                    <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                    <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                    <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                    <img src="{{ newMovies.movieImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                    <div style="padding-bottom:25px;"></div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        {% endif %}
+    </div>
+    <div class="row" style="color: #fff">
+        <p style="margin: 10px;padding-left:48%;"> <i   class="fa fa-play-circle-o" style="font-size:28px;color:black"></i> 
+            <a class="btn btn-primary">Watch trailer</a>
+            {% comment %} Add Chansa's Code to the website {% endcomment %}
+        </p>
+        <p style="margin: 10px;padding-left:47%;"> <i   class="fa fa-play-circle-o" style="font-size:28px;color:black"></i> 
+            <a class="btn btn-primary">Watch on Decoder</a>
+            {% comment %} Add Chansa's Code to the website {% endcomment %}
+        </p>
+    </div>
 </div>
 
 {% endblock  %}

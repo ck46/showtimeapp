@@ -18,7 +18,7 @@
                    {% for newSeriess in series %}
                 <div class="col-sm-3 auto">
                    <div style="" >
-                     <img src="{{ newSeriess.seriesImages.url }}" alt="Series" alt="Series" class="testImage responsive" style="width:230px; height:300px;">
+                       <a href="{% url 'seriesDetail' pk=newSeriess.pk %}"><img src="{{ newSeriess.seriesImages.url }}" alt="Series" alt="Series" class="testImage responsive" style="width:230px; height:300px;"></a>
                      <br>
                      <a href="{% url 'seriesDetail' pk=newSeriess.pk %}" style="color:#fff; font-size: 12px;">
                          {{ newSeriess.title }} 

@@ -7,21 +7,23 @@ from django.db import models
 # Create your models here.
 
 # Genre
+
+
 class Genre(models.Model):
     title = models.CharField(max_length=200)
     active = models.BooleanField(default=True)
     publishedDate = models.DateTimeField(
         blank=True, null=True
     )
-    genreImages = models.FileField(upload_to='Series/GenreImage/', blank=False, null=True)
+    genreImages = models.FileField(
+        upload_to='Series/GenreImage/', blank=False, null=True)
 
     def __unicode__(self):
         title = str(self.title)
-        return title 
+        return title
 
 
-
-# Episodes 
+# Episodes
 class Episodes(models.Model):
     genres = models.ForeignKey(Genre)
     title = models.CharField(max_length=200)
@@ -30,58 +32,81 @@ class Episodes(models.Model):
         blank=True, null=True
     )
     episodes1 = models.CharField(max_length=200)
-    episodesVideo1 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo1 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes2 = models.CharField(max_length=200)
-    episodesVideo2 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo2 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes3 = models.CharField(max_length=200)
-    episodesVideo3 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo3 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes4 = models.CharField(max_length=200)
-    episodesVideo4 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo4 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes5 = models.CharField(max_length=200)
-    episodesVideo5 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo5 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes6 = models.CharField(max_length=200)
-    episodesVideo6 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo6 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes7 = models.CharField(max_length=200)
-    episodesVideo7 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo7 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes8 = models.CharField(max_length=200)
-    episodesVideo8 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo8 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes9 = models.CharField(max_length=200)
-    episodesVideo9 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo9 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes10 = models.CharField(max_length=200)
-    episodesVideo10 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo10 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes11 = models.CharField(max_length=200)
-    episodesVideo11 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo11 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes12 = models.CharField(max_length=200)
-    episodesVideo12 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo12 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes13 = models.CharField(max_length=200)
-    episodesVideo13 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo13 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes14 = models.CharField(max_length=200)
-    episodesVideo14 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo14 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes15 = models.CharField(max_length=200)
-    episodesVideo15 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo15 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes16 = models.CharField(max_length=200)
-    episodesVideo16 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo16 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes17 = models.CharField(max_length=200)
-    episodesVideo17 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo17 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes18 = models.CharField(max_length=200)
-    episodesVideo18 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo18 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes19 = models.CharField(max_length=200)
-    episodesVideo19 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo19 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes20 = models.CharField(max_length=200)
-    episodesVideo20 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo20 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes21 = models.CharField(max_length=200)
-    episodesVideo21 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo21 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes22 = models.CharField(max_length=200)
-    episodesVideo22 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo22 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes23 = models.CharField(max_length=200)
-    episodesVideo23 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
+    episodesVideo23 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
     episodes24 = models.CharField(max_length=200)
-    episodesVideo24 = models.FileField(upload_to='Series/EpisodesVideo/', blank=False, null=True)
-    
+    episodesVideo24 = models.FileField(
+        upload_to='Series/EpisodesVideo/', blank=False, null=True)
 
     def __unicode__(self):
         title = str(self.title)
-        return title 
+        return title
 
 
 # Season
@@ -96,14 +121,16 @@ class Seasons(models.Model):
     publishedDate = models.IntegerField(
         blank=True, null=True
     )
-    seriesImages = models.FileField(upload_to='Series/SeriesImage/', blank=False, null=True)
-    
+    seriesImages = models.FileField(
+        upload_to='Series/SeriesImage/', blank=False, null=True)
 
     def __unicode__(self):
         title = str(self.title)
-        return title 
+        return title
 
-# Series 
+# Series
+
+
 class Series(models.Model):
     genres = models.ForeignKey(Genre)
     episodes = models.ForeignKey(Episodes)
@@ -115,14 +142,9 @@ class Series(models.Model):
     publishedDate = models.IntegerField(
         blank=True, null=True
     )
-    seriesImages = models.FileField(upload_to='Series/SeriesImage/', blank=False, null=True)
-    
+    seriesImages = models.FileField(
+        upload_to='Series/SeriesImage/', blank=False, null=True)
 
     def __unicode__(self):
         title = str(self.title)
-        return title 
-
-
-
-
-
+        return title

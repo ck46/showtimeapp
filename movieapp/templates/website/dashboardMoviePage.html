@@ -49,7 +49,8 @@
                    {% for newMoviess in movies %}
                    <div class="col-sm-3 auto">
                       <div style="" >
-                        <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;">
+                          <a href="{% url 'moviesDetail' pk=newMoviess.pk %}">
+                              <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;"></a>
                         <br>
                         <a href="{% url 'moviesDetail' pk=newMoviess.pk %}" style="color:#fff; font-size: 12px;">
                             {{ newMoviess.title }} 

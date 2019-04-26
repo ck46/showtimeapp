@@ -7,10 +7,12 @@ from seriesapp import views
 from .views import *
 
 urlpatterns = [
-    # Series 
+    # Series
     url(r'^$', views.dashboardPage, name='dashboardPage'),
     url(r'^seriesList/$', views.seriesList, name='seriesList'),
     url(r'^series/(?P<pk>\d+)/$', views.seriesDetail, name='seriesDetail'),
+    url(r'^series/(?P<pk>\d+)/season/(?P<sk>\d+)/$',
+        views.seasonDetail, name='seasonDetail'),
     url(r'^series/new/$', views.newSeries, name='newSeries'),
     url(r'^series/(?P<pk>\d+)/edit/$', views.seriesEdit, name='seriesEdit'),
     url(r'^series/(?P<pk>\d+)/remove/$', views.seriesRemove, name='seriesRemove'),
