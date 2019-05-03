@@ -15,6 +15,8 @@ urlpatterns = [
     url(r'^movie/new/$', views.newMovies, name='newMovies'),
     url(r'^movie/(?P<pk>\d+)/edit/$', views.moviesEdit, name='moviesEdit'),
     url(r'^movie/(?P<pk>\d+)/remove/$', views.moviesRemove, name='moviesRemove'),
+    url(r'^genre/(?P<gn>[-\w]+)/$',
+        views.genreMoviePage, name='genreMoviePage'),
 
     # Genres
     url(r'^genresMoviesList/$', views.genresMoviesList, name='genreMoviesList'),

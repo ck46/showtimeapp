@@ -7,10 +7,22 @@
 {% block content  %}
 
 {% comment %} <div class="text-right"> {% endcomment %}
-<div >
-      <form method="get">
-     <div class="row">
+    <div >
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                {% for newMovieGenress in newMovieGenres %}
 
+                <a href="genre/{{ newMovieGenress.pk }}">
+                    <button class="btn btn-primary">{{ newMovieGenress.title }}</button>
+                </a>
+
+                {% endfor  %}
+            </div>
+        </div>
+        <form method="get">
+        <div class="row">
+            
+         
         <div class="form-group col-sm-4 col-md-3">
           <form method="GET">
             <input  type="text" name="searchs" placeholder=" Search for Movie" value="{{request.GET.searchs}}" class="form-control"  id="searchs"  />
@@ -22,20 +34,12 @@
          <button type="submit" class="btn btn-primary">
             <span class="glyphicon glyphicon-search"></span> Search
         </button>
-        </div>
+         </div>
+      
     </div>
 
-  
-
-
-
-    
+        </form>    
       <br>
-  </form>
-
-      
-
-
 
                    
 </div>
@@ -56,7 +60,7 @@
                             {{ newMoviess.title }} 
                         </a>            
                         <br>             
-                        <a class="card-text" style="color: grey; font-size: 12px;">{{ newMoviess.genre }}</a> 
+                        <a class="card-text" style="color: grey; font-size: 12px;">{{ newMoviess.genre.title }}</a> 
                         <p class="card-text" style="color: grey; font-size: 12px;" >{{ newMoviess.publishedDate }}</p> 
                         <!-- <a class="btn btn-danger">Watch Trailer</a>
                         <a class="btn btn-danger">Decoder</a> -->

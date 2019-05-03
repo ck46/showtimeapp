@@ -17,45 +17,73 @@ def HomePayPal(request):
     return render(request, 'website/paypalpayment.html', {})
 
 # Dashboard Product
+
+
 @login_required
 def dashboardMoviePage(request):
-    movies= Movie.objects.all().order_by('publishedDate')
-    genres = Genre.objects.all().order_by('publishedDate')
-   
+    movies = Movie.objects.all().order_by('publishedDate')
+    genres = Genre.objects.all().order_by('title')
+
     query = request.GET.get("searchs")
     if query:
         movies = movies.filter(
-            Q(title__icontains=query)|
-            Q(description__icontains=query)|
-            Q(publishedDate__icontains=query)|
+            Q(title__icontains=query) |
+            Q(description__icontains=query) |
+            Q(publishedDate__icontains=query) |
             Q(genre__title__icontains=query)
         ).distinct()
-    return render(request, 'website/dashboardMoviePage.html', {'newMovieGenres' : genres, 'movies': movies})
+    return render(request, 'website/dashboardMoviePage.html', {'newMovieGenres': genres, 'movies': movies})
+
+# Filter movies by genre
+
+
+@login_required
+def genreMoviePage(request, gn):
+    # print(gn)
+    movies = Movie.objects.filter(genre=gn).order_by('publishedDate')
+    genres = Genre.objects.all().order_by('title')
+
+    query = request.GET.get("searchs")
+    if query:
+        movies = movies.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query) |
+            Q(publishedDate__icontains=query) |
+            Q(genre__title__icontains=query)
+        ).distinct()
+    return render(request, 'website/genreMoviePage.html', {'newMovieGenres': genres, 'movies': movies})
 
 #  Movie List
+
+
 @login_required
 def moviesList(request):
     movieslist = Movie.objects.all().order_by('publishedDate')
-    return render(request, 'website/moviesList.html', {'newMovies' : movieslist})
+    return render(request, 'website/moviesList.html', {'newMovies': movieslist})
 
 #  Genre Product List
+
+
 @login_required
 def genresMoviesList(request):
     genreslists = Genre.objects.all().order_by('publishedDate')
-    return render(request, 'website/genreList.html', {'newMovieGenres' : genreslists})
+    return render(request, 'website/genreList.html', {'newMovieGenres': genreslists})
 
 # Details of Series
+
+
 @login_required
 def moviesDetail(request, pk):
-    moviesdetails  = get_object_or_404(Movie, pk=pk)
+    moviesdetails = get_object_or_404(Movie, pk=pk)
     return render(request, 'website/movieDetails.html', {'newMovies': moviesdetails})
 
 # Details of Genres
+
+
 @login_required
 def genresMoviesDetail(request, pk):
-    genresdetails  = get_object_or_404(Genre, pk=pk)
-    return render(request, 'website/genresDetails.html', {'newMovieGenres':genresdetails})
-
+    genresdetails = get_object_or_404(Genre, pk=pk)
+    return render(request, 'website/genresDetails.html', {'newMovieGenres': genresdetails})
 
 
 # New Store Product
@@ -74,15 +102,15 @@ def newMovies(request):
     else:
         form = MoviesForm()
         # form = PostForm(request.POST, instance=new_post)
-    return render(request, 'website/newMovies.html', {'form' : form})
+    return render(request, 'website/newMovies.html', {'form': form})
 
 
 # Edit old  Store Product
 @login_required
 def moviesEdit(request, pk):
-    newMovies= get_object_or_404(Movie, pk=pk)
-    if request.method == "POST" :
-        form = MoviesForm(request.POST,request.FILES, instance=newMovies)
+    newMovies = get_object_or_404(Movie, pk=pk)
+    if request.method == "POST":
+        form = MoviesForm(request.POST, request.FILES, instance=newMovies)
         if form.is_valid():
             newMovies = form.save()
             newMovies.user = request.user
@@ -102,7 +130,6 @@ def moviesRemove(request, pk):
     return redirect('moviesList')
 
 
-
 # New Genres
 @login_required
 def newMovieGenres(request):
@@ -118,15 +145,16 @@ def newMovieGenres(request):
     else:
         form = GenresForm()
         # form = PostForm(request.POST, instance=new_post)
-    return render(request, 'website/newMovieGenres.html', {'form' : form})
+    return render(request, 'website/newMovieGenres.html', {'form': form})
 
 
 # Edit old Store
 @login_required
 def genresEdit(request, pk):
     newMovieGenres = get_object_or_404(Genre, pk=pk)
-    if request.method == "POST" :
-        form = displayProductForm(request.POST,request.FILES, instance=newStore)
+    if request.method == "POST":
+        form = displayProductForm(
+            request.POST, request.FILES, instance=newStore)
         if form.is_valid():
             newMovieGenres = form.save()
             newMovieGenres.user = request.user
