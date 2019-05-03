@@ -16,6 +16,8 @@ urlpatterns = [
     url(r'^series/new/$', views.newSeries, name='newSeries'),
     url(r'^series/(?P<pk>\d+)/edit/$', views.seriesEdit, name='seriesEdit'),
     url(r'^series/(?P<pk>\d+)/remove/$', views.seriesRemove, name='seriesRemove'),
+    url(r'^genre/(?P<gn>[-\w]+)/$',
+        views.genreSeriesPage, name='genreSeriesPage'),
 
     # Genres
     url(r'^genreList/$', views.genresList, name='genreProductList'),

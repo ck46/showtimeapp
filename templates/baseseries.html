@@ -77,28 +77,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
            <li class="nav-item dropdown">
-              <a   class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <a   class="nav-link dropdown-toggle" href="{% url 'dashboardMoviePage' %}" id="navbarDropdown" role="button">
              <span class="navLink" >Movies</span> 
               </a>
-
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'dashboardMoviePage' %}">Movies</a>
-                <div class="dropdown-divider"></div>
-              </div>
-
             </li>
            <li class="nav-item dropdown">
-              <a   class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <a   class="nav-link dropdown-toggle" href="{% url 'dashboardPage' %}" id="navbarDropdown" role="button">
              <span class="navLink" >Series</span> 
               </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{% url 'dashboardPage' %}">Series</a>
-               <div class="dropdown-divider"></div>
-                {% for newGenress in newGenres%}
-                <a class="dropdown-item" href="#">{{newGenress.title}}</a>
-                <div class="dropdown-divider"></div>
-                {% endfor  %}
-              </div>
             </li>
             <li  class="nav-item  active"   >
               <a  class="nav-link"  href="#"><span class="navLink" >{{user}}</span><span class="sr-only">(current)</span></a>
@@ -127,7 +113,7 @@
       </div>
         <!-- Dropdown - Messages -->
         
-        <div>
+        
                     {% comment %} <form action="#"> {% endcomment %}
                      {% comment %} <input type="text" class="form-control" id="usr" placeholder="Search.."  style="background-color:#1c0238; color:#fff; width:40%; float:right;"> {% endcomment %}
                       {% comment %} <input type="text" placeholder="Search.." name="search" style="background-color:#1c0238; color:#fff; .search-container {
@@ -144,37 +130,47 @@
           <button class="btn btn-primary" type="submit">Search</button>
           
     </div>
-  </form> {% endcomment %}
+    </form> {% endcomment %}
+    <div>
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                {% for newGenre in newGenres %}
 
-     <form method="get">
-     <div class="row">
+                <a href="/series/genre/{{ newGenre.pk }}">
+                    <button class="btn btn-primary">{{ newGenre.title }}</button>
+                </a>
 
-        <div class="form-group col-sm-4 col-md-3">
-          <form method="GET">
-            <input  type="text" name="searchs" placeholder=" Search for Series" value="{{request.GET.searchs}}" class="form-control"  id="searchs"  />
-          </form>
+                {% endfor  %}
+            </div>
         </div>
-        
-         <div class="form-group col-sm-4 col-md-3">
-          
-         <button type="submit" class="btn btn-primary">
-            <span class="glyphicon glyphicon-search"></span> Search
-        </button>
-        </div>
-    </div>
+        <form method="get">
+            <div class="row">
 
-  
-
-
-
-    
-      <br>
-  </form>
-
-                   
+                <div class="form-group col-sm-4 col-md-3">
+                    <form method="GET">
+                        <input  type="text" name="searchs" placeholder=" Search for Series" value="{{request.GET.searchs}}" class="form-control"  id="searchs"  />
+                    </form>
                 </div>
+                
+                <div class="form-group col-sm-4 col-md-3">
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-search"></span> Search
+                    </button>
+                </div>
+            </div>
+
+            
+
+
+
+            
+            <br>
+        </form>
+
         
-       
+    </div>
+    
         {% comment %} Content  {% endcomment %}
         {% block content %} 
         {% endblock %}

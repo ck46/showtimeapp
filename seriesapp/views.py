@@ -17,7 +17,7 @@ import time
 @login_required
 def dashboardPage(request):
     series = Series.objects.all().order_by('publishedDate')
-    genres = Genre.objects.all().order_by('publishedDate')
+    genres = Genre.objects.all().order_by('title')
     # series_filter = SeriesFilters(request.GET, queryset=series)
     query = request.GET.get("searchs")
     if query:
@@ -28,6 +28,24 @@ def dashboardPage(request):
             Q(genres__title__icontains=query)
         ).distinct()
     return render(request, 'website/dashboardPages.html', {'newGenres': genres, 'series': series})
+
+
+# Genre Dashboard
+@login_required
+def genreSeriesPage(request, gn):
+    series = Series.objects.filter(genres=gn).order_by('publishedDate')
+    genres = Genre.objects.all().order_by('publishedDate')
+    # series_filter = SeriesFilters(request.GET, queryset=series)
+    query = request.GET.get("searchs")
+    if query:
+        series = series.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query) |
+            Q(publishedDate__icontains=query) |
+            Q(genres__title__icontains=query)
+        ).distinct()
+    return render(request, 'website/genreSeriesPage.html', {'newGenres': genres,
+                                                            'series': series})
 
 #  Series List
 
