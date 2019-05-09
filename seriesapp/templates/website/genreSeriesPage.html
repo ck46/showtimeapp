@@ -1,0 +1,39 @@
+{% extends 'baseseries.html' %}
+
+{% load static %}
+
+{% load staticfiles %}
+
+{% block content  %}
+
+
+<div class="col-sm-12">
+
+
+    
+    <hr style="border: 1px dashed white;" >
+    <div class="row">
+        
+        {% comment %} {% for newSeriess in newSeries %} {% endcomment %}
+        {% for newSeriess in series %}
+        <div class="col-sm-3 auto">
+            <div style="" >
+                <a href="{% url 'seriesDetail' pk=newSeriess.pk %}"><img src="{{ newSeriess.seriesImages.url }}" alt="Series" alt="Series" class="testImage responsive" style="width:230px; height:300px;"></a>
+                <br>
+                <a href="{% url 'seriesDetail' pk=newSeriess.pk %}" style="color:#fff; font-size: 12px;">
+                    {{ newSeriess.title }} 
+                </a>            
+                <br>             
+                <a class="card-text" style="color: grey; font-size: 12px;">{{ newSeriess.genres.title }}</a> 
+                <p class="card-text" style="color: grey; font-size: 12px;" >{{ newSeriess.publishedDate }}</p> 
+                <!-- <a class="btn btn-danger">Watch Trailer</a>
+                     <a class="btn btn-danger">Decoder</a> -->
+            </div>
+            <br>
+        </div>  
+        {% endfor %}
+        
+    </div>
+</div>
+
+{% endblock  %}

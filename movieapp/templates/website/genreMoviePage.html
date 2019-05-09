@@ -1,0 +1,75 @@
+{% extends 'basemovies.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+{% load staticfiles %}
+
+{% block content  %}
+
+{% comment %} <div class="text-right"> {% endcomment %}
+    <div >
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                {% for newMovieGenress in newMovieGenres %}
+
+                <a href="/movie/genre/{{ newMovieGenress.pk }}">
+                    <button class="btn btn-primary">{{ newMovieGenress.title }}</button>
+                </a>
+
+                {% endfor  %}
+            </div>
+        </div>
+        <form method="get">
+            <div class="row">
+                
+                
+                <div class="form-group col-sm-4 col-md-3">
+                    <form method="GET">
+                        <input  type="text" name="searchs" placeholder=" Search for Movie" value="{{request.GET.searchs}}" class="form-control"  id="searchs"  />
+                    </form>
+                </div>
+                
+                <div class="form-group col-sm-4 col-md-3">
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-search"></span> Search
+                    </button>
+                </div>
+                
+            </div>
+
+        </form>    
+        <br>
+
+        
+    </div>
+
+    <div class="col-sm-12">
+        <hr style="border: 1px dashed white;" >
+        <div class="row">
+            <hr>
+            
+            {% comment %} {% for newMoviess in newMovies %} {% endcomment %}
+            {% for newMoviess in movies %}
+            <div class="col-sm-3 auto">
+                <div style="" >
+                    <a href="{% url 'moviesDetail' pk=newMoviess.pk %}">
+                        <img src="{{ newMoviess.movieImages.url }}" alt="Series" alt="Series" class="testImage" style="width:230px; height:300px;"></a>
+                        <br>
+                        <a href="{% url 'moviesDetail' pk=newMoviess.pk %}" style="color:#fff; font-size: 12px;">
+                            {{ newMoviess.title }} 
+                        </a>            
+                        <br>             
+                        <a class="card-text" style="color: grey; font-size: 12px;">{{ newMoviess.genre.title }}</a> 
+                        <p class="card-text" style="color: grey; font-size: 12px;" >{{ newMoviess.publishedDate }}</p> 
+                        <!-- <a class="btn btn-danger">Watch Trailer</a>
+                             <a class="btn btn-danger">Decoder</a> -->
+                </div>
+                <br>
+            </div>  
+            {% endfor %}
+        </div>            
+    </div>
+
+
+    {% endblock  %}

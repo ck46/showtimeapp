@@ -1,0 +1,148 @@
+{% extends 'baseseriesdetail.html' %}
+
+{% load static %}
+
+{% load staticfiles %}
+
+{% block content  %}
+
+
+
+<div class="">
+    <div class="row">
+        <div class="col-md-12">
+            
+            <h3>Season {{seasonNumber}}</h3>
+            {% if newSeries.title %}
+            
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="907" height="410" src="https://www.youtube.com/embed/xjDjIWPwcPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- <img class="card-img-top" src="{{ newSeries.seriesImages.url }}" alt="Series"  style="width:230px; height:300px;"> -->
+            <!-- <div style="margin-top:-50px">
+                 <p>kkkk</p>
+                 </div> -->
+            <br>
+            <a class="card-title" style="color:#fff; font-size:12px;">{{newSeries.title}}</a>
+            <br>
+            <p class="card-text" style="color: white; font-size:12px;">{{newSeries.description}}</a> 
+                <a class="card-text" style="color: white; font-size:12px;">{{newSeries.genre}}</a> 
+                
+                <p class="card-text" style="color: white font-size:12px;">{{newSeries.publishedDate}}</p>
+                
+                <br>
+
+                
+
+                <div class="container">
+                    
+                    
+                    
+                    <h5 class="text-left" style="color:#fff;">Directed By
+                        <hr class="text-left" style="background-color:white;color:white; margin-left:-1px;width:25%;">
+                    </h5>
+                    <img src="{{ newSeries.seriesImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+
+                    
+                    
+                </div>
+                
+                <div style="padding-left:20px;">
+                    
+                    
+                    
+                    <div class="container">
+
+                        <h5 class="text-left"style="color:#fff;">Cast
+                            <hr class="text-left" style="background-color:white;color:white; margin-left:-1px;width:25%;">
+                        </h5>
+
+                        <img src="{{ newSeries.seriesImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                        <img src="{{ newSeries.seriesImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                        <img src="{{ newSeries.seriesImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                        <img src="{{ newSeries.seriesImages.url }}" class="rounded-circle"  width="80px;" height="80px;">
+                        <div style="padding-bottom:25px;"></div>
+                        
+                        
+                    </div>
+                </div>
+                {% endif %}
+
+
+                
+                
+
+                
+
+                
+                <!-- <button id="paypal">PayPal</button> -->
+        </div>
+    </div>  
+</div>          
+
+
+<div class="container">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">{{newSeries.title}}
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li syle="padding-top: 20px; padding-bottom:20px;" role="presentation"><a role="menuitem" tabindex="-1" href="season/1">Season 1</a></li>
+            <br>
+            <li syle="padding-top: 20px; padding-bottom:20px;"  role="presentation"><a role="menuitem" tabindex="-1" href="season/2">Season 2</a></li>
+            <br>
+            <li syle="padding-top: 20px; padding-bottom:20px;" role="presentation"><a role="menuitem" tabindex="-1" href="season/3">Season 3</a></li>
+            <br>
+            <li syle="padding-top: 20px; padding-bottom:20px;" role="presentation"><a role="menuitem" tabindex="1" href="season/4">Season 4</a></li>
+            <br>
+            <li syle="padding-top: 20px; padding-bottom:20px;" role="presentation"><a role="menuitem" tabindex="-1" href="season/5">Season 5</a></li>
+        </ul>
+    </div>
+    
+</div>
+
+
+<div class="container">
+    {% for i in i|rjust:10 %}
+    <div class="row" style="color: #fff">    
+        <div style="padding-top:20px;">
+            {{ forloop.counter }}. Episode watching the new episode     
+        </div>
+        <p style="margin-top:-2%;padding-left:80%;"> <i   class="fa fa-play-circle-o" style="font-size:28px;color:black"></i> 
+            <a class="btn btn-primary">Watch Decoder</a>
+            {% comment %} Add Chansa's Code to the website {% endcomment %}
+        </p> 
+    </div>
+    {% endfor %}
+</div>
+
+</div>
+<div class="text-center">
+    <!-- <a class="btn btn-primary" >Watch Trailer</a> -->
+    <br>
+    <br>
+    
+</div>
+<br>
+
+
+</div>    
+</div>   
+
+
+</div>
+
+
+
+<footer class="sticky-footer" style="background-color:black;">
+    <div class="container my-auto">
+        
+        <div class="copyright text-center my-auto">
+            <img src="{% static 'img/footer.png' %}" width="80px" height="80px">
+            <span>Copyright &copy; Show Time 2019</span>
+            
+        </div>
+    </div>
+</footer>
+
+
+{% endblock  %}
